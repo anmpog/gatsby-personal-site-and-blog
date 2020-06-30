@@ -3,7 +3,7 @@ module.exports = {
     title: `anmpog.dev`,
     author: {
       name: `Anthony Pogliano`,
-      summary: `– a full-stack web developer based in Boulder, CO.`,
+      summary: `– a full-stack web developer based in Boulder, CO. ⛰`,
     },
     description: `The personal site and blog of Anthony Pogliano.`,
     siteUrl: `https://anmpog.dev`,
@@ -52,8 +52,8 @@ module.exports = {
     {
       resolve: `gatsby-transformer-mdx`,
       options: {
-        pagesPath: `${__dirname}/content/blog`
-      }
+        pagesPath: `${__dirname}/content/blog`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
