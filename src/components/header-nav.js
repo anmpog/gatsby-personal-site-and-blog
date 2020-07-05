@@ -17,6 +17,12 @@ const NavLink = styled(Link)`
 
   &.current-page {
     color: red;
+<<<<<<< HEAD
+=======
+  }
+
+  &.current-page {
+>>>>>>> 5a5d6ddea2d0ad47684ef94810eb860ad6f3ba2a
     border-bottom: 2px solid red;
   }
 `
