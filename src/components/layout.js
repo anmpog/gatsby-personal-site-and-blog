@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import HeaderNav from '../components/header-nav'
 
 import { rhythm, scale } from '../utils/typography'
 
@@ -56,7 +57,10 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header>
+        {header}
+        <HeaderNav />
+      </header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
