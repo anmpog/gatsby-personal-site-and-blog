@@ -11,7 +11,11 @@ const PostPreview = ({ post }) => {
         border-radius: 1px;
         padding: 1rem;
         background-color: dodgerblue;
+<<<<<<< HEAD
         box-shadow: -3px 2px .25rem red;
+=======
+        box-shadow: -3px 2px .1rem red;
+>>>>>>> b4016d75c37ce8db42b69901f7ddb79a02203f67
 
       `}
     >
