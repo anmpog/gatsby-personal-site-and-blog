@@ -10,12 +10,21 @@ slug: 'fourth-post'
 
 Here's some shit in the post
 
-```js
+```js{numberLines: true}
 function test(param) {
   return (`Here's some thing with ${param`)
 }
 
+function foo(bar) {
+  var a = 42,
+      b = 'Prism';
+
+  return a + bar(b);
+}
 ```
+
+I also want to test out the inline code highlighting because it's helpful to be able to write snippets like `function testInlineHighlight(param)`
+
 
 ### Stuff
 

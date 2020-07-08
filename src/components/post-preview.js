@@ -14,23 +14,22 @@ const PostPreview = ({ post }) => {
       <article
         key={post.slug}
         css={css`
-        margin-bottom: 2rem;
-        border-radius: 1px;
-        padding: 1rem;
-        background-color: dodgerblue;
-        box-shadow: -3px 2px .25rem red;
-      `}
+          margin-bottom: 2rem;
+          border-radius: 1px;
+          padding: 1rem;
+          background-color: #35E9D4;
+          box-shadow: -4px 6px .25rem #FF70A2;
+        `}
       >
         <header
           css={css`
           display: flex;
           justify-content: space-between;
+          {/* align-items: center; */}
         `}
         >
           <h3>
-
             {post.title}
-
           </h3>
           <time
             css={css`
