@@ -77,7 +77,32 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
-
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Fugaz One`,
+            variants: [
+              `400`
+            ]
+          },
+          {
+            family: `Arvo`,
+            variants: [
+              `400`
+            ]
+          },
+          {
+            family: `Open Sans`,
+            variants: [
+              `300`,
+              `400`,
+            ]
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
