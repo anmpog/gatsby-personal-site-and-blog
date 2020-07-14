@@ -9,8 +9,7 @@ const Blog = ({ location }) => {
 
   return (
     <Layout title='Blog Posts' location={location}>
-      <SEO title='Blog Posts' />
-      <h1>Here are some things I have thought:</h1>
+      <SEO title='Blog Posts' location={location}/>
       {posts.map(post => (
         <PostPreview key={post.slug} post={post} />
       ))}
