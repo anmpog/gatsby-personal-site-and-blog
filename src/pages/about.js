@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 const About = ({ location }) => {
   return (
     <Layout title='About Me' location={location}>
-    <SEO title='About Me' />
+    <SEO title='About Me' location={location} />
       <div>
         <p>
           I'm Anthony! I'm a self-taught web developer who lives in Boulder, Colorado. My coding journey started when I was forced to use a really crappy piece of software every day and I thought, "Hmmm. I could do a better job of making an app than this..." It turns out that the joke is on me: it's not that easy to make applications.
