@@ -7,17 +7,17 @@ const PostPreview = ({ post }) => {
     <Link
       to={post.slug}
       css={css`
-              color: inherit;
-              text-decoration: none;
-            `}
+        color: inherit;
+        text-decoration: none;
+      `}
     >
       <article
         key={post.slug}
         css={css`
           margin-bottom: 2rem;
           border-radius: 1px;
-          padding: 1rem;
-          background-color: #35E9D4;
+          padding: 1.25rem;
+          background-color: #a1f5e9;
           box-shadow: -4px 6px .25rem #FF70A2;
         `}
       >
@@ -25,7 +25,6 @@ const PostPreview = ({ post }) => {
           css={css`
           display: flex;
           justify-content: space-between;
-          {/* align-items: center; */}
         `}
         >
           <h3>
@@ -33,9 +32,8 @@ const PostPreview = ({ post }) => {
           </h3>
           <time
             css={css`
-            display: inline-block;
-            margin-bottom: .75rem;
-          `}
+              display: inline-block;
+            `}
           >
             {post.date}
           </time>

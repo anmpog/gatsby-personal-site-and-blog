@@ -2,9 +2,9 @@ import React from 'react'
 import HeaderNav from '../components/header-nav'
 import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
+import { Link } from 'gatsby'
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+const Layout = ({ title, children }) => {
   return (
     <div
       style={{
@@ -12,6 +12,7 @@ const Layout = ({ location, title, children }) => {
         maxWidth: rhythm(36),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         backgroundColor: `rgba(245, 245, 245, .85)`,
+        minHeight: `calc(100vh - 3rem)`,
       }}
     >
       <header
@@ -28,16 +29,13 @@ const Layout = ({ location, title, children }) => {
           box-shadow: -4px 6px .25rem #FF70A2;
         `}
       >
-        <h1>anmpog.dev</h1>
-        {location.pathname !== rootPath && <h3>{title}</h3>}
+        <Link to='/'>
+          <h1>{title}</h1>
+        </Link>
       </header>
       <HeaderNav />
       <main>{children}</main>
-      <footer>
-        Built with Gatsby
-      </footer>
-    </div>
-  )
+    </div>)
 }
 
 export default Layout

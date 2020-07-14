@@ -7,9 +7,7 @@ import { rhythm } from '../utils/typography'
 
 const NavLink = styled(Link)`
   color: inherit;
-  list-style: none;
   margin-right: 2.5rem;
-  text-decoration: none;
   font-size: 1.25rem;
 
   &:last-of-type {
@@ -17,9 +15,10 @@ const NavLink = styled(Link)`
   }
 
   &.current-page {
-    color: red;
+    color: #ff206e;
     border-bottom: 2px solid #FF70A2;
-    text-shadow: -1px 1px blue;
+    text-shadow: -1px 1px #41ead4;
+    font-weight: 600;
   }
 `
 
