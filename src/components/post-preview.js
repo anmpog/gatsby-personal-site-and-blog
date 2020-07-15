@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
-const PostPreview = ({ post, location }) => {
+const PostPreview = ({ post }) => {
   return (
     <Link
       to={post.slug}
