@@ -15,7 +15,7 @@ const LandingText = ({ location }) => {
         `}
       >
         <article>
-          Hi, I'm Anthony. I'm a web developer based in Boulder, CO. I'm excited about building, helping, sharing, and oxford commas. Let's make something cool together!
+          Hi, I'm Anthony. I'm a web developer based in Boulder, CO. I'm excited about building, helping, and sharing. Let's make something cool together!
         </article>
       </h1>
       <nav
