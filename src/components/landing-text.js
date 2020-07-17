@@ -8,7 +8,7 @@ const LandingText = ({ location }) => {
       <h1
         css={css`
           margin: 8.25rem auto 2rem;
-          max-width: 38rem;
+          max-width: 40rem;
           padding: 2.5rem;
           border: 1.25rem solid;
           border-radius: 2px;
@@ -21,7 +21,7 @@ const LandingText = ({ location }) => {
       <nav
         css={css`
         display: flex;
-        width: 38rem;
+        width: 40rem;
         margin: 0 auto;
         justify-content: space-around;
 
@@ -29,7 +29,7 @@ const LandingText = ({ location }) => {
           color: inherit;
           font-size: 1.25rem;
           border: 3px solid;
-          padding: 1rem;
+          padding: .75rem;
           border-radius: 2px;
         }
 
