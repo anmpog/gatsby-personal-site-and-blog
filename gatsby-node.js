@@ -32,11 +32,14 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
+  if (!result) {
+    return
+  }
+
   // Create blog posts pages.
   const posts = result.data.allMdx.edges
 
   posts.forEach((post, index) => {
-
     createPage({
       path: `/blog/${post.node.frontmatter.slug || post.node.fields.slug}`,
       component: blogPost,
