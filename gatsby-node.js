@@ -32,10 +32,6 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  if (!result) {
-    return
-  }
-
   // Create blog posts pages.
   const posts = result.data.allMdx.edges
 
