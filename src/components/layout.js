@@ -3,6 +3,7 @@ import HeaderNav from '../components/header-nav'
 import { css } from '@emotion/core'
 import { rhythm } from '../utils/typography'
 import { Link } from 'gatsby'
+import SocialLinks from '../components/social-links'
 
 const Layout = ({ title, children }) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         backgroundColor: `rgba(245, 245, 245, .85)`,
         minHeight: `calc(100vh - 3rem)`,
+        borderRadius: `2px`
       }}
     >
       <header
@@ -35,6 +37,7 @@ const Layout = ({ title, children }) => {
       </header>
       <HeaderNav />
       <main>{children}</main>
+      <SocialLinks />
     </div>)
 }
 
