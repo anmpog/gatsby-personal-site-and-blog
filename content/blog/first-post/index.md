@@ -1,6 +1,6 @@
 ---
 title: First post!
-author: 'Emma B'
+author: 'Anthony Pogliano'
 date: '2020-07-16'
 description: ''
 slug: 'first-post'
