@@ -13,4 +13,3 @@ const BlogIndex = ({ location }) => {
 }
 
 export default BlogIndex
-

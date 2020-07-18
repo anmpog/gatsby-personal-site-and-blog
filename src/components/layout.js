@@ -14,7 +14,7 @@ const Layout = ({ title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         backgroundColor: `rgba(245, 245, 245, .85)`,
         minHeight: `calc(100vh - 3rem)`,
-        borderRadius: `2px`
+        borderRadius: `2px`,
       }}
     >
       <header
@@ -28,7 +28,7 @@ const Layout = ({ title, children }) => {
           margin-bottom: 2rem;
           margin-top: 0;
           height: 6rem;
-          box-shadow: -4px 6px .25rem #FF70A2;
+          box-shadow: -4px 6px 0.25rem #ff70a2;
         `}
       >
         <Link to='/'>
@@ -38,7 +38,8 @@ const Layout = ({ title, children }) => {
       <HeaderNav />
       <main>{children}</main>
       <SocialLinks />
-    </div>)
+    </div>
+  )
 }
 
 export default Layout

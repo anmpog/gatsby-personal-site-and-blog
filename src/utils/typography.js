@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 // Typography is basically only being used to take advantage
-// of the rhythm, scale options at this point. 
+// of the rhythm, scale options at this point.
 
 export default typography
 export const rhythm = typography.rhythm

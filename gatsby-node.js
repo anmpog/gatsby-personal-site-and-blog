@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/blog/${post.node.frontmatter.slug || post.node.fields.slug}`,
       component: blogPost,
       context: {
-        slug: post.node.fields.slug
+        slug: post.node.fields.slug,
       },
     })
   })

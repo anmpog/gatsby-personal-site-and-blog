@@ -15,28 +15,29 @@ const LandingText = ({ location }) => {
         `}
       >
         <article>
-          Hi, I'm Anthony. I'm a web developer based in Boulder, CO. I'm excited about building, helping, and sharing. Let's make something cool together!
+          Hi, I'm Anthony. I'm a web developer based in Boulder, CO. I'm excited
+          about building, helping, and sharing. Let's make something cool
+          together!
         </article>
       </h1>
       <nav
         css={css`
-        display: flex;
-        width: 40rem;
-        margin: 0 auto;
-        justify-content: space-around;
+          display: flex;
+          width: 40rem;
+          margin: 0 auto;
+          justify-content: space-around;
 
-        & > a {
-          color: inherit;
-          font-size: 1.25rem;
-          border: 3px solid;
-          padding: .75rem;
-          border-radius: 2px;
-        }
+          & > a {
+            color: inherit;
+            font-size: 1.25rem;
+            border: 3px solid;
+            padding: 0.75rem;
+            border-radius: 2px;
+          }
 
-        & > a:hover {
-
-        }
-      `}
+          & > a:hover {
+          }
+        `}
       >
         <Link to='/about'>About</Link>
         <Link to='/blog'>Blog</Link>

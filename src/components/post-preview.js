@@ -18,18 +18,16 @@ const PostPreview = ({ post }) => {
           border-radius: 1px;
           padding: 1.25rem;
           background-color: #a1f5e9;
-          box-shadow: -4px 6px .25rem #FF70A2;
+          box-shadow: -4px 6px 0.25rem #ff70a2;
         `}
       >
         <header
           css={css`
-          display: flex;
-          justify-content: space-between;
-        `}
+            display: flex;
+            justify-content: space-between;
+          `}
         >
-          <h3>
-            {post.title}
-          </h3>
+          <h3>{post.title}</h3>
           <time
             css={css`
               display: inline-block;
@@ -41,7 +39,7 @@ const PostPreview = ({ post }) => {
         <section>
           <p
             dangerouslySetInnerHTML={{
-              __html: post.description
+              __html: post.description,
             }}
           />
         </section>

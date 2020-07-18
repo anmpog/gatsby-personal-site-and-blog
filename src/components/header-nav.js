@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import { rhythm } from '../utils/typography'
-
 
 const NavLink = styled(Link)`
   color: inherit;
@@ -16,7 +15,7 @@ const NavLink = styled(Link)`
 
   &.current-page {
     color: #ff206e;
-    border-bottom: 2px solid #FF70A2;
+    border-bottom: 2px solid #ff70a2;
     text-shadow: -1px 1px #41ead4;
     font-weight: 600;
   }
@@ -29,14 +28,20 @@ const HeaderNav = () => {
         margin: 0;
         display: flex;
       `}
-      style={{ 
-        marginBottom: rhythm(2) 
+      style={{
+        marginBottom: rhythm(2),
       }}
     >
-  <NavLink to='/' activeClassName='current-page'>Home</NavLink>
-  <NavLink to='/about' activeClassName='current-page'>About</NavLink>
-  <NavLink to='/blog' partiallyActive={true} activeClassName='current-page'>Blog</NavLink>
-    </ul >
+      <NavLink to='/' activeClassName='current-page'>
+        Home
+      </NavLink>
+      <NavLink to='/about' activeClassName='current-page'>
+        About
+      </NavLink>
+      <NavLink to='/blog' partiallyActive={true} activeClassName='current-page'>
+        Blog
+      </NavLink>
+    </ul>
   )
 }
 

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 const usePosts = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             excerpt
@@ -28,7 +28,7 @@ const usePosts = () => {
     author: post.node.frontmatter.author || 'Anthony Pogliano',
     date: post.node.frontmatter.date,
     description: post.node.frontmatter.description || post.node.excerpt,
-    slug: post.node.frontmatter.slug || post.node.fields.slug
+    slug: post.node.frontmatter.slug || post.node.fields.slug,
   }))
 }
 

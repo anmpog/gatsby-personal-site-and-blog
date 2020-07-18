@@ -36,9 +36,9 @@ const SEO = ({ description, lang, meta, title, location }) => {
       }}
       title={title}
       titleTemplate={
-        location.pathname === '/' ?
-          `${site.siteMetadata.title}` :
-          `%s | ${site.siteMetadata.title}`
+        location.pathname === '/'
+          ? `${site.siteMetadata.title}`
+          : `%s | ${site.siteMetadata.title}`
       }
       meta={[
         {

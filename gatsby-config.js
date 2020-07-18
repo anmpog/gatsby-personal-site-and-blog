@@ -33,7 +33,7 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`
+            resolve: `gatsby-remark-images`,
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -84,25 +84,18 @@ module.exports = {
         fonts: [
           {
             family: `Fugaz One`,
-            variants: [
-              `400`
-            ]
+            variants: [`400`],
           },
           {
             family: `Arvo`,
-            variants: [
-              `400`
-            ]
+            variants: [`400`],
           },
           {
             family: `Open Sans`,
-            variants: [
-              `300`,
-              `400`,
-            ]
-          }
-        ]
-      }
+            variants: [`300`, `400`],
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -114,15 +107,15 @@ module.exports = {
               classPrefix: `language-`,
               inlineCodeMarker: null,
               aliases: {
-                js: 'javascript'
+                js: 'javascript',
               },
               showLineNumbers: true,
               noInlineHighlight: false,
-            }
-          }
-        ]
-      }
-    }
+            },
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
