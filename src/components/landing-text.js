@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
+
 const LandingText = ({ location }) => {
   return (
     <>
@@ -12,6 +13,13 @@ const LandingText = ({ location }) => {
           padding: 2.5rem;
           border: 1.25rem solid;
           border-radius: 2px;
+
+          @media (max-width: 576px) {
+            padding: 10px;
+            border: none;
+            margin-top: 125px;
+            margin-bottom: 150px;
+          }
         `}
       >
         <article>
@@ -27,16 +35,30 @@ const LandingText = ({ location }) => {
           margin: 0 auto;
           justify-content: space-around;
 
+          @media (max-width: 576px) {
+            width: 250px;
+            flex-direction: column;
+          }
+
           & > a {
             color: inherit;
             font-size: 1.25rem;
             border: 3px solid;
             padding: 0.75rem;
             border-radius: 2px;
+
+            @media (max-width: 576px) {
+              padding: 0.5rem;
+              text-align: center;
+              margin-bottom: .75rem;
+            }
           }
+
+
 
           & > a:hover {
           }
+
         `}
       >
         <Link to='/about'>About</Link>

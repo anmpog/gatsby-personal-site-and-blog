@@ -25,12 +25,14 @@ const HeaderNav = () => {
   return (
     <ul
       css={css`
-        margin: 0;
+        margin: 0 0 ${rhythm(2)} 0;
         display: flex;
+        @media (max-width: 576px) {
+          justify-content: center;
+          margin-bottom: ${rhythm(.75)}
+        }
       `}
-      style={{
-        marginBottom: rhythm(2),
-      }}
+
     >
       <NavLink to='/' activeClassName='current-page'>
         Home

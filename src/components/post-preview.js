@@ -19,6 +19,10 @@ const PostPreview = ({ post }) => {
           padding: 1.25rem;
           background-color: #a1f5e9;
           box-shadow: -4px 6px 0.25rem #ff70a2;
+          @media (max-width: 576px) {
+            box-shadow: none;
+            padding: 10px;
+          }
         `}
       >
         <header
