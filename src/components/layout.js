@@ -4,7 +4,6 @@ import { rhythm } from '../utils/typography'
 import { Link } from 'gatsby'
 import HeaderNav from '../components/header-nav'
 import SocialLinks from '../components/social-links'
-import { FaAutoprefixer } from 'react-icons/fa'
 
 const Layout = ({ title, children }) => {
   const breakpoints = [576, 768, 992, 1200]
