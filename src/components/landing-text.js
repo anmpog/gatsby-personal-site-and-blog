@@ -17,8 +17,7 @@ const LandingText = ({ location }) => {
           @media (max-width: 576px) {
             padding: 15px;
             border: none;
-            margin-top: 75px;
-            margin-bottom: 150px;
+            margin: 50px auto;
           }
         `}
       >
