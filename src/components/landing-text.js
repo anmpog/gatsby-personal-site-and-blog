@@ -13,6 +13,7 @@ const LandingText = ({ location }) => {
           padding: 2.5rem;
           border: 1.25rem solid;
           border-radius: 2px;
+          background-color: rgba(255, 255, 255, 0.5);
 
           @media (max-width: 576px) {
             padding: 15px;
@@ -23,7 +24,7 @@ const LandingText = ({ location }) => {
       >
         <article>
           Hi, I'm Anthony. I'm a web developer based in Boulder, CO. I'm excited
-          about building, helping, and sharing. Let's make something cool
+          about building, helping and sharing. Let's make something cool
           together!
         </article>
       </h1>
@@ -40,11 +41,11 @@ const LandingText = ({ location }) => {
           }
 
           & > a {
-            color: inherit;
             font-size: 1.25rem;
             border: 3px solid;
             padding: 0.75rem;
             border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
 
             @media (max-width: 576px) {
               padding: 0.5rem;

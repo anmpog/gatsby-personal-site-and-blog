@@ -17,7 +17,7 @@ const PostPreview = ({ post }) => {
           margin-bottom: 2rem;
           border-radius: 1px;
           padding: 1.25rem;
-          background-color: #a1f5e9;
+          background-color: #fff;
           box-shadow: -4px 6px 0.25rem #ff70a2;
           @media (max-width: 576px) {
             box-shadow: none;

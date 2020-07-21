@@ -9,7 +9,7 @@ const About = ({ location }) => {
       <p>
         I'm Anthony! I'm a self-taught web developer who lives in Boulder,
         Colorado. I am primarily a JavaScript developer, and I gravitate
-        towards front-end development (but I can cause some errors in ExpressJS as well). Please feel free to contact me on my
+        towards front-end development (but I can cause some fun bugs in ExpressJS as well). Please feel free to contact me on my
           social media if you want to chat about anything! Also, please <span role='img' aria-label='bear emoji'>🐻</span> with
           me while I develop this site!
         </p>
