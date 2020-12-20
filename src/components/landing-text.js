@@ -13,7 +13,7 @@ const LandingText = ({ location }) => {
           padding: 2.5rem;
           border: 1.25rem solid;
           border-radius: 2px;
-          background-color: rgba(255, 255, 255, 0.5);
+          background-color: #4A4E69;
 
           @media (max-width: 576px) {
             padding: 15px;

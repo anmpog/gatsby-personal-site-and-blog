@@ -53,8 +53,8 @@ li {
 
 /* Class Styles */
 .header-style {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
   border-radius: 3px;
 }

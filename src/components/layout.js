@@ -18,7 +18,7 @@ const Layout = ({ title, children }) => {
         margin: `${rhythm(1)} auto`,
         maxWidth: rhythm(36),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        backgroundColor: `rgba(245, 245, 245, .85)`,
+        backgroundColor: `rgba(245, 245, 245, .75)`,
         minHeight: `calc(100vh - 3rem)`,
         borderRadius: `2px`,
         display: 'flex',
