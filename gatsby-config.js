@@ -3,7 +3,7 @@ module.exports = {
     title: `anmpog.dev`,
     author: {
       name: `Anthony Pogliano`,
-      summary: `– a full-stack web developer based in Boulder, CO. ⛰`,
+      summary: `– a front-end web developer based in Boulder, CO. ⛰`,
     },
     description: `The personal site and blog of Anthony Pogliano.`,
     siteUrl: `https://anmpog.dev`,
@@ -72,31 +72,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Fugaz One`,
-            variants: [`400`],
-          },
-          {
-            family: `Arvo`,
-            variants: [`400`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [`300`, `400`],
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

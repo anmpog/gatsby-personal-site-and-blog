@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import { rhythm } from '../utils/typography'
 
 const NavLink = styled(Link)`
   color: inherit;
@@ -23,17 +21,7 @@ const NavLink = styled(Link)`
 
 const HeaderNav = () => {
   return (
-    <ul
-      css={css`
-        margin: 0 0 ${rhythm(2)} 0;
-        display: flex;
-        @media (max-width: 576px) {
-          justify-content: center;
-          margin-bottom: ${rhythm(.75)}
-        }
-      `}
-
-    >
+    <ul>
       <NavLink to='/' activeClassName='current-page'>
         Home
       </NavLink>
