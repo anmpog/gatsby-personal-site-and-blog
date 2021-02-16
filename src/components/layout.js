@@ -10,18 +10,18 @@ const Layout = ({ title, children }) => {
   // )
 
   return (
-    <div>
+    <body>
       <header>
         <HeaderNav />
         <h1>{title}</h1>
       </header>
       <main>
-        {children}
+          {children}
       </main>
       <footer>
         <SocialLinks />
       </footer>
-    </div >
+    </body>
   )
 }
 
