@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { EDEADLK } = require("constants")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -9,7 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
           edges {
@@ -19,6 +20,24 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                slug
+              }
+            }
+            next {
+              frontmatter {
+                title
+                slug
+              }
+              fields {
+                slug
+              }
+            }
+            previous {
+              frontmatter {
+                title
+                slug
+              }
+              fields {
                 slug
               }
             }
@@ -36,13 +55,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach((post, index) => {
+    console.log('Post obj from w/in the forEach loop: ', post.next)
     createPage({
       path: `/blog/${post.node.frontmatter.slug || post.node.fields.slug}`,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
+        previous: post.previous,
+        next: post.next
       },
     })
+    console.log('The post object from createPage: ', post)
+    console.log('Associated index: ', index)
   })
 }
 

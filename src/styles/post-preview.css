@@ -1,0 +1,20 @@
+.post-preview {
+  margin-bottom: 1.75rem;
+  border: 2px solid #ff70a2;
+  border-radius: 3px;
+}
+
+.post-preview:hover {
+  box-shadow: -3px 3px 8px #65def1;
+  background-color: #424450;
+  transition: box-shadow .8s, background-color .8s;
+}
+
+.post-preview p {
+  padding: 1.2rem;
+  margin: 0;
+}
+
+.post-preview h2 {
+  margin-bottom: .5rem;
+}
