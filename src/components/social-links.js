@@ -21,6 +21,7 @@ const SocialLink = styled.a`
 
   &:hover {
     opacity: .7;
+    transition: opacity .8s;
   }
 `
 

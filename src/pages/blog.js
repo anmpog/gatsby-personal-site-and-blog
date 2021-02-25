@@ -8,7 +8,7 @@ const Blog = ({ location }) => {
   const posts = usePosts()
 
   return (
-    <Layout title='Blog Posts' location={location}>
+    <Layout>
       <SEO title='Blog Posts' location={location} />
       {posts.map(post => (
         <PostPreview key={post.slug} post={post} />

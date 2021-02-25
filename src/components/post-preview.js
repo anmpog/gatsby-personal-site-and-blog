@@ -3,25 +3,19 @@ import { Link } from 'gatsby'
 
 const PostPreview = ({ post }) => {
   return (
-    <Link
-      to={post.slug}
-    >
-      <article
-        key={post.slug}
-      >
+    <Link to={post.slug}>
+      <article className='post-preview' key={post.slug}>
         <header>
-          <h3>{post.title}</h3>
-          <time>
+          <h2>{post.title}</h2>
+          <time dateTime={post.date}>
             {post.date}
           </time>
         </header>
-        <section>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: post.description,
-            }}
-          />
-        </section>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.description,
+          }}
+        />
       </article>
     </Link>
   )

@@ -1,0 +1,36 @@
+.blog-post-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 76vh;
+}
+
+.blog-post-content {
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.blog-post-content header {
+  padding: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blog-post-footer {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.blog-post-footer ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-post-footer nav p {
+  margin: 0;
+  padding: 0;
+}
+
+.blog-post-footer a,
+.blog-post-footer nav p {
+  color: #65def1;
+}

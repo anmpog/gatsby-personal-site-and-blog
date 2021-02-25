@@ -34,11 +34,9 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <div>
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-      </p>
-    </div>
+    <p>
+      Written by <strong>{author.name}</strong> {author.summary}
+    </p>
   )
 }
 

@@ -13,6 +13,11 @@ const NavLink = styled(Link)`
     margin-right: 0;
   }
 
+  &:hover {
+    color: #65def1;
+    transition: color .8s;
+  }
+
   &.current-page {
     color: #ff206e;
     border-bottom: 2px solid #ff70a2;
@@ -22,17 +27,20 @@ const NavLink = styled(Link)`
 
 const HeaderNav = () => {
   return (
-    <ul>
+    <nav>
       <NavLink to='/' activeClassName='current-page'>
         Home
       </NavLink>
       <NavLink to='/about' activeClassName='current-page'>
         About
       </NavLink>
+      <NavLink to='/projects' activeClassName='current-page'>
+        Projects
+      </NavLink>
       <NavLink to='/blog' partiallyActive={true} activeClassName='current-page'>
         Blog
       </NavLink>
-    </ul>
+    </nav>
   )
 }
 

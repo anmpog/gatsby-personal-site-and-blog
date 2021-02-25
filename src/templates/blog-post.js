@@ -11,46 +11,56 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         location={location}
       />
-      <article>
-        <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <hr/>
-        <footer>
+      <div className='blog-post-wrapper'>
+        <article className='blog-post-content'>
+          <header>
+            <h1>
+              {post.frontmatter.title}
+            </h1>
+            <time dateTime={post.frontmatter.date}>
+              {post.frontmatter.date}
+            </time>
+          </header>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </article>
+        <hr />
+        <footer className='blog-post-footer'>
           <Bio />
+          <nav>
+            <ul>
+              <li>
+                {previous ? (
+                  <Link to={`../${previous.frontmatter.slug}`} rel='prev'>
+                    ← {previous.frontmatter.title}
+                  </Link>
+                ) : (
+                    <p>You're on the first post.</p>
+                  )}
+              </li>
+              <li>
+                <Link to='/blog'>
+                  Blog Home
+                </Link>
+              </li>
+              <li>
+                {next ? (
+                  <Link to={`../${next.frontmatter.slug}`} rel='next'>
+                    {next.frontmatter.title} →
+                  </Link>
+                ) : (
+                    <p>No next post...yet.</p>
+                  )}
+              </li>
+            </ul>
+          </nav>
         </footer>
-      </article>
-
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel='prev'>
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel='next'>
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      </div>
     </Layout>
   )
 }
@@ -66,7 +76,7 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 180)
       body
       frontmatter {
         title
