@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (

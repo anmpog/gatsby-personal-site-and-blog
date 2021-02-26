@@ -55,7 +55,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach((post, index) => {
-    console.log('Post obj from w/in the forEach loop: ', post.next)
     createPage({
       path: `/blog/${post.node.frontmatter.slug || post.node.fields.slug}`,
       component: blogPost,
@@ -65,8 +64,6 @@ exports.createPages = async ({ graphql, actions }) => {
         next: post.next
       },
     })
-    console.log('The post object from createPage: ', post)
-    console.log('Associated index: ', index)
   })
 }
 
