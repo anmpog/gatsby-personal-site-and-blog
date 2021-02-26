@@ -10,15 +10,21 @@ html {
 body {
   color: rgba(255, 255, 255, 0.9);
   background-color: #23242b;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 header,
 main,
 footer {
   padding: 1.2rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 85vh;
 }
 
 p {
@@ -49,19 +55,9 @@ li {
   list-style: none;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  flex: 1 0 auto;
-}
-
-footer {
-  /* Rule(s) erased */
-}
-
 /* Class Styles */
 .landing-text {
-  margin-top: 22%;
+  margin-top: 30%;
   font-family: 'Fugaz One', Impact, Haettenschweiler, 'Arial Narrow Bold',
   sans-serif;
 }
@@ -74,5 +70,4 @@ footer {
 .tech-skills {
   display: inline-block;
   border-bottom: 3px solid;
-  margin-bottom: .25rem;
 }
