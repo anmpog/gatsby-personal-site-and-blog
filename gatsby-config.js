@@ -20,6 +20,7 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-plugin-preload-fonts`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
