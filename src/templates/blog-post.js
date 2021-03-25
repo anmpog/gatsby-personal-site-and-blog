@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <hr />
         <footer className='blog-post-footer'>
           <Bio />
-          <nav>
+          <nav className='bottom-nav'>
             <ul>
               <li>
                 {previous ? (

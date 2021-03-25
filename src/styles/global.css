@@ -18,6 +18,10 @@ footer {
   padding: 1.2rem;
 }
 
+header {
+  margin-bottom: 2rem;
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -57,7 +61,7 @@ li {
 
 /* Class Styles */
 .landing-text {
-  margin-top: 30%;
+  margin-top: 25%;
   font-family: 'Fugaz One', Impact, Haettenschweiler, 'Arial Narrow Bold',
   sans-serif;
 }
@@ -70,4 +74,8 @@ li {
 .tech-skills {
   display: inline-block;
   border-bottom: 3px solid;
+}
+
+.bottom-nav {
+  margin-top: 3rem;
 }

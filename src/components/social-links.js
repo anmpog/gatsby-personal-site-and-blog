@@ -7,12 +7,13 @@ const SocialLink = styled.a`
   justify-content: center;
   align-items: center;
   background-color: #f5f5f6;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
+  margin-right: 2rem;
 
-  &:first-of-type {
-    margin-right: 2rem;
+  &:last-of-type {
+    margin-right: 0;
   }
 
   svg {
@@ -21,7 +22,7 @@ const SocialLink = styled.a`
 
   &:hover {
     opacity: .7;
-    transition: opacity .8s;
+    transition: opacity .3s;
   }
 `
 
