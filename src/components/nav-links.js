@@ -25,7 +25,7 @@ const NavLink = styled(Link)`
   }
 `
 
-const HeaderNav = () => {
+const NavLinks = () => {
   return (
     <nav>
       <NavLink to='/' activeClassName='current-page'>
@@ -44,4 +44,4 @@ const HeaderNav = () => {
   )
 }
 
-export default HeaderNav
+export default NavLinks

@@ -13,7 +13,7 @@ const BlogIndex = ({ location }) => {
             Hi, I'm Anthony. I'm a front-end web developer based in Boulder, CO. I'm excited
             about building, helping and sharing. Let's make something cool
             together.
-        </article>
+          </article>
         </h1>
       </Layout>
     </>
