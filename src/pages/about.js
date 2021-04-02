@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { HTMLIcon, JavaScriptIcon, NodeJSIcon, ReactIcon, MongoIcon, CSSIcon, GatsbyIcon, FirefoxIcon } from '../assets/dev-icons'
 
 const About = ({ location }) => {
   return (
@@ -18,24 +19,32 @@ const About = ({ location }) => {
         using the word "rad" unironically.
       </p>
 
-      <h2 className='tech-skills'>Tech</h2>
-      <ul>
-        <li>JavaScript ES6</li>
-        <li>NodeJS/Express</li>
-        <li>React</li>
-        <li>CSS3</li>
-        <li>HTML5</li>
-        <li>MongoDB</li>
-        <li>GraphQL</li>
-      </ul>
-
-      <h2 className='tech-skills'>Tools</h2>
-      <ul>
-        <li>GatsbyJS</li>
-        <li>VSCode</li>
-        <li>Postman</li>
-        <li>Robo 3T</li>
-        <li>Firefox</li>
+      <h2 className='tech-skills'>Stuff I Use:</h2>
+      <ul className='grid-container'>
+        <li>
+          <JavaScriptIcon />
+        </li>
+        <li>
+          <NodeJSIcon />
+        </li>
+        <li>
+          <ReactIcon />
+        </li>
+        <li>
+          <CSSIcon />
+        </li>
+        <li>
+          <HTMLIcon />
+        </li>
+        <li>
+          <MongoIcon />
+        </li>
+        <li>
+          <GatsbyIcon />
+        </li>
+        <li>
+          <FirefoxIcon />
+        </li>
       </ul>
     </Layout>
   )

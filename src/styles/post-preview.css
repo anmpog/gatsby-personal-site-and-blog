@@ -5,9 +5,8 @@
 }
 
 .post-preview:hover {
-  box-shadow: -3px 3px 8px #65def1;
   background-color: #424450;
-  transition: box-shadow .8s, background-color .8s;
+  transition: background-color .5s;
 }
 
 .post-preview p {

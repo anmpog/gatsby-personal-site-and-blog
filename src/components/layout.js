@@ -5,12 +5,6 @@ import MobileNav from './mobile-nav'
 import DesktopNav from './desktop-nav'
 
 const Layout = ({ title, children }) => {
-  // const breakpoints = [576, 768, 992, 1200]
-
-  // const mq = breakpoints.map(
-  //   bp => `@media (max-width: ${bp}px)`
-  // )
-
   return (
     <div className='layout'>
       <header>
