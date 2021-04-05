@@ -9,6 +9,24 @@
   margin-bottom: 2rem;
 }
 
+.blog-post-content h1,
+.blog-post-content h2,
+.blog-post-content h3,
+.blog-post-content h4,
+.blog-post-content h5 {
+  margin-top: 3.5rem;
+}
+
+.blog-post-content a {
+  color: lightblue;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.blog-post-content a:hover {
+  text-decoration: underline;
+}
+
 .blog-post-content header {
   padding: 0;
   text-align: center;
@@ -33,4 +51,8 @@
 .blog-post-footer a,
 .blog-post-footer nav p {
   color: #65def1;
+}
+
+.bio {
+  margin-bottom: 3.5rem;
 }
