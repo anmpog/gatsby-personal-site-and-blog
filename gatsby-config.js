@@ -13,6 +13,11 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-preload-fonts`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,14 +25,6 @@ module.exports = {
         name: `blog`,
       },
     },
-    `gatsby-plugin-preload-fonts`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/images`,
-    //     name: `images`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -53,15 +50,12 @@ module.exports = {
         pagesPath: `${__dirname}/content/blog`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -69,26 +63,6 @@ module.exports = {
         short_name: `anmpog.dev`,
         start_url: `/`,
         icon: `src/static/mountain-favicon.png`,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: `language-`,
-              inlineCodeMarker: null,
-              aliases: {
-                js: 'javascript',
-              },
-              showLineNumbers: true,
-              noInlineHighlight: false,
-            },
-          },
-        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

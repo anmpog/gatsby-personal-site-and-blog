@@ -38,6 +38,14 @@
   text-align: center;
 }
 
+.blog-post-footer a {
+  letter-spacing: 0;
+}
+
+.blog-post-footer a:hover {
+  font-weight: bold;
+}
+
 .blog-post-footer ul {
   display: flex;
   justify-content: space-between;
