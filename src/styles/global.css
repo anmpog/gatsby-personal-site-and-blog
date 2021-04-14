@@ -8,6 +8,7 @@ html {
   --white: rgba(255, 255, 255, 0.9);
   --icon-color: #ffc2e2;
   --dark-grey: #23242b;
+  --default-content-padding: 1.2rem;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
 header,
 main,
 footer {
-  padding: 1.2rem;
+  padding: var(--default-content-padding);
 }
 
 main {
@@ -55,7 +56,7 @@ h4,
 h5 {
   margin: 0;
   font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 a {

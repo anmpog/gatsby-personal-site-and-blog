@@ -1,6 +1,10 @@
 @media (max-width: 576px) {
+  html {
+    --default-content-padding: .8rem;
+  }
+
   body {
-    font-size: 16px;
+    font-size: .8rem;
   }
 
   nav {
@@ -13,6 +17,15 @@
   h3,
   h4,
   h5 {
+    padding: 0;
+  }
+
+  header,
+  main {
+    padding: var(--default-content-padding);
+  }
+
+  footer {
     padding: 0;
   }
 

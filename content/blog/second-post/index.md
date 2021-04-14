@@ -64,7 +64,7 @@ Number Of Letters That Need To Be Sent: 10
 Number Of Letters Sent So Far: x
 
 FOR each letter that needs to be sent:
-  check how many letters have been sent so far
+  <!-- check how many letters have been sent so far
     IF Number of Letters Sent So Far is less than 10:
       remove envelope from box of envelopes
       THEN fold a letter
@@ -76,7 +76,7 @@ FOR each letter that needs to be sent:
       INCREASE the No. of Letters Sent by 1
       REPEAT
     ELSE-IF Number of Letters Sent So Far is 10:
-      STOP sending letters
+      STOP sending letters -->
 ```
 
 There are some subtle differences in the pseudo-code above that differentiate it from the previous example(s). Namely, the example above attempts to explicitly account for the number of times we have to repeat a set of tasks. Whether or not you continue to mail envelopes is dependent on how many you've already mailed. Once you've mailed some arbitrary number of envelopes, you will move on to some other task (presumably). Conceptually, this is known as a "loop counter", and it does just what we did above: counts the number of times we've executed a certain task. In both code and "real life" examples, this gives us a concrete way to identify how much work we've done, and when to stop doing work. We also introduced some semblance of a _control structure_ in the form of the `IF` and `ELSE-IF` sections in the pseudo-code. In particular, we introduced language indicating _conditions_ that determine what we will do – either continue stuffing envelopes, or stop and go do something else.
@@ -89,4 +89,4 @@ If I've explained this well, you should have a good model forming in your mind o
 
 Here's a good article on what loops are, and how they work with a stronger emphasis on implementing them in code:
 
-1) [Looping code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code) from Mozilla Developer Network - the gold standard for information on web development.
+1. [Looping code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code) from Mozilla Developer Network - the gold standard for information on web development.
