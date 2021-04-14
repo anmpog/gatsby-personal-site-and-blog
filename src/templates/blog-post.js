@@ -35,7 +35,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </header>
             <MDXRenderer>{post.body}</MDXRenderer>
           </article>
-          <hr />
           <footer className='blog-post-footer'>
             <nav className='bottom-nav'>
               <ul>
