@@ -28,6 +28,11 @@ footer {
   padding: var(--default-content-padding);
 }
 
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -83,7 +88,7 @@ li {
 
 .social-links {
   display: flex;
-  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .tech-skills {
