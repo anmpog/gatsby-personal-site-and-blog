@@ -10,6 +10,7 @@ const PostPreview = ({ post }) => {
           <time dateTime={post.date}>
             {post.date}
           </time>
+          <hr></hr>
         </header>
         <p
           dangerouslySetInnerHTML={{

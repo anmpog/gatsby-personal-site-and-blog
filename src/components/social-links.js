@@ -23,14 +23,14 @@ const SocialLinks = () => {
         target='_blank'
         rel='noreferrer'
       >
-        <FaTwitter color='#f5f5f6' size={36} />
+        <FaTwitter color='#f5f5f6' size={30} />
       </SocialLink>
       <SocialLink
         href='https://github.com/anmpog'
         target='_blank'
         rel='noreferrer'
       >
-        <FaGithub color='#f5f5f6' size={36} />
+        <FaGithub color='#f5f5f6' size={30} />
       </SocialLink>
     </div>
   )

@@ -17,3 +17,8 @@ slug: 'some-title'
 ```
 
 The `author` field will automatically default to 'Anthony Pogliano', as this is my blog, but the field and an empty string must still be provided or the blog posts will not be correctly parsed by the renderer. The `description` field can also be left as an empty string and a description will be generated from the content of the blog. This is not as desirable, however, because the automatically generated description will include any headings, which makes things read kinda funny.
+
+## Direct inspiration
+As I built this I was continually looking around at other people's blogs and stealing ideas I liked. While I am sure I won't get every source of inspiration here, I wanted to have a place to give thanks to those whose ideas I ripped off. If you're reading this, please give their sites a visit and see the awesome work they do!
+
+* [Rekhchand Sahu](https://rekhchandsahu.com/) has a really wonderful site and I really dug the layout of his "about me" page. I like how minimal his site is, but not "bare". Some of his UI interactions are really nifty.

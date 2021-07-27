@@ -1,11 +1,12 @@
 .post-preview {
-  margin-bottom: 1.75rem;
-  border: 2px solid #ff70a2;
+  margin-bottom: 3rem;
   border-radius: 3px;
+  background-color: var(--white);
+  color: #424349;
 }
 
 .post-preview:hover {
-  background-color: #424450;
+  background-color: #ffc2e2;
   transition: background-color .5s;
 }
 
