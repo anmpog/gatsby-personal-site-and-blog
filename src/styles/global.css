@@ -5,14 +5,14 @@
 html {
   font-size: 20px;
   font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --white: rgba(255, 255, 255, 0.9);
+  --white: #fff6f9;
   --icon-color: #ffc2e2;
   --dark-grey: #23242b;
   --default-content-padding: 1.2rem;
 }
 
 body {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white);
   background-color: #23242b;
   height: 100%;
 }
@@ -31,6 +31,31 @@ footer {
 nav {
   display: flex;
   justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: inherit;
+  margin-right: 2.5rem;
+  font-size: 1rem;
+  font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 0.25rem;
+}
+
+.nav-link:last-of-type {
+  margin-right: 0;
+}
+
+.nav-link:hover {
+  color: #65def1;
+  transition: color 0.8s;
+}
+
+.current-page {
+  color: #ff206e;
+  border-bottom: 2px solid #ff70a2;
+  font-weight: 600;
 }
 
 main {
@@ -43,10 +68,15 @@ main {
 
 header {
   margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 footer {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 p {
@@ -83,27 +113,81 @@ li {
 .landing-text {
   font-family: 'Fugaz One', Impact, Haettenschweiler, 'Arial Narrow Bold',
     sans-serif;
-  margin-top: 16%;
+  margin-top: calc(100vh / 4);
+  text-transform: lowercase;
+}
+
+.mobile-nav {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .social-links {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.tech-skills {
-  display: inline-block;
-  margin-top: 3rem;
+.about-heading {
+  text-transform: lowercase;
+  flex: 1 1;
 }
 
-.grid-container {
-  margin-top: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3rem 1rem;
-  justify-items: center;
-  align-items: center;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 66.66%;
+  flex-wrap: wrap;
+}
+
+.about-content > * {
+  margin-top: 0;
+}
+
+.about-content ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-stagger {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-stagger p {
+  flex-basis: 33.33%;
+  margin: 0;
+}
+
+.icons {
+  flex-basis: 33.33%;
+  margin-bottom: 2.3rem;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.about-section {
+  display: flex;
+  margin-bottom: 3.5rem;
+}
+
+.content-course {
+  margin-bottom: 2rem;
+}
+
+.content-course:hover {
+  background-color: #424349;
+  transition: background-color 0.8s;
+}
+
+.content-course p {
+  margin: 0;
 }
 
 .layout {

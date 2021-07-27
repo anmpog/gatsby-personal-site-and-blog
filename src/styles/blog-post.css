@@ -69,6 +69,15 @@
   color: #65def1;
 }
 
+.bottom-nav ul {
+ display: flex;
+ width: 100%;
+}
+
+.bottom-nav ul li {
+  flex-basis: 33.33%;
+}
+
 .bio {
   margin-top: 3.5rem;
 }

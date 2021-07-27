@@ -6,7 +6,7 @@ const usePosts = () => {
       allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
-            excerpt
+            excerpt(pruneLength: 400)
             fields {
               slug
             }

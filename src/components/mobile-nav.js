@@ -25,12 +25,12 @@ export const useOnClickOutside = (ref, handler) => {
 
 // Burger button
 const StyledBurger = styled.button`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width:  2rem;
-  height: 2rem;
+  width:  1.75rem;
+  height: 1.75rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -42,7 +42,7 @@ const StyledBurger = styled.button`
   }
 
   div {
-    width: 2rem;
+    width: 1.75rem;
     height: 0.25rem;
     background: #ff206e;
     border-radius: 10px;
