@@ -10,14 +10,33 @@ module.exports = {
     social: {
       twitter: `anmpog`,
     },
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/',
+      },
+      {
+        name: 'about',
+        link: '/about',
+      },
+      {
+        name: 'projects',
+        link: '/projects',
+      },
+      {
+        name: 'blog',
+        link: '/blog',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-preload-fonts`,
+    // `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,18 +70,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `anmpog.dev`,
         short_name: `anmpog.dev`,
         start_url: `/`,
         icon: `src/static/mountain-favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Merriweather\:400,700,900`],
+        display: `swap`
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -3,7 +3,7 @@ import React from 'react'
 const defaultIconProperties = {
   width: '3.5rem',
   height: 'auto',
-  color: 'var(--white)'
+  color: 'darken'
 }
 
 export const MongoIcon = ({ height = defaultIconProperties.height, width = defaultIconProperties.width, color = defaultIconProperties.color }) => {

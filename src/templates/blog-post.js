@@ -2,13 +2,15 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
+import { ThemeProvider } from 'theme-ui'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import CodeBlock from '../components/code-block'
+import theme from '../gatsby-plugin-theme-ui/index'
 
 const components = {
-  pre: CodeBlock
+  pre: CodeBlock,
 }
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -22,51 +24,49 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
         location={location}
       />
-      <MDXProvider components={components}>
-        <div className='blog-post-wrapper'>
-          <article className='blog-post-content'>
-            <header>
-              <h1>
-                {post.frontmatter.title}
-              </h1>
-              <time dateTime={post.frontmatter.date}>
-                {post.frontmatter.date}
-              </time>
-            </header>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </article>
-          <footer className='blog-post-footer'>
-            <nav className='bottom-nav'>
-              <ul>
-                <li>
-                  {previous ? (
-                    <Link to={`../${previous.frontmatter.slug}`} rel='prev'>
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  ) : (
+      <ThemeProvider theme={theme}>
+        <MDXProvider components={components}>
+          <div className='blog-post-wrapper'>
+            <article className='blog-post-content'>
+              <header>
+                <h1>{post.frontmatter.title}</h1>
+                <time dateTime={post.frontmatter.date}>
+                  {post.frontmatter.date}
+                </time>
+              </header>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </article>
+            <footer className='blog-post-footer'>
+              <nav className='bottom-nav'>
+                <ul>
+                  <li>
+                    {previous ? (
+                      <Link to={`../${previous.frontmatter.slug}`} rel='prev'>
+                        ← {previous.frontmatter.title}
+                      </Link>
+                    ) : (
                       <p>You're on the first post.</p>
                     )}
-                </li>
-                <li>
-                  <Link to='/blog'>
-                    Blog Home
-                  </Link>
-                </li>
-                <li>
-                  {next ? (
-                    <Link to={`../${next.frontmatter.slug}`} rel='next'>
-                      {next.frontmatter.title} →
-                    </Link>
-                  ) : (
+                  </li>
+                  <li>
+                    <Link to='/blog'>Blog Home</Link>
+                  </li>
+                  <li>
+                    {next ? (
+                      <Link to={`../${next.frontmatter.slug}`} rel='next'>
+                        {next.frontmatter.title} →
+                      </Link>
+                    ) : (
                       <p>No next post...yet.</p>
                     )}
-                </li>
-              </ul>
-            </nav>
-            <Bio />
-          </footer>
-        </div>
-      </MDXProvider>
+                  </li>
+                </ul>
+              </nav>
+              <Bio />
+            </footer>
+          </div>
+        </MDXProvider>
+      </ThemeProvider>
     </Layout>
   )
 }

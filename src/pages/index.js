@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from 'react'
 import Layout from '../components/layout'
+import { jsx, Themed, Container } from 'theme-ui'
 
 import SEO from '../components/seo'
 
@@ -8,12 +10,10 @@ const BlogIndex = ({ location }) => {
     <>
       <Layout>
         <SEO title='anmpog.dev' location={location} />
-        <h1 className='landing-text'>
-          <article>
-            Hi, I'm Anthony. I'm a front-end web developer based in Boulder, CO. I'm excited
-            about building, helping and sharing. Let's make something cool
-            together.
-          </article>
+        <h1 sx={{ variant: 'styles.h1', mt: ['45%', '15%'] }}>
+          Hi, I&apos;m Anthony. I&apos;m a front-end web developer based in
+          Boulder, CO. I&apos;m excited about building, helping and sharing.
+          Let&apos;s make something cool together.
         </h1>
       </Layout>
     </>

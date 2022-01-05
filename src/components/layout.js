@@ -1,24 +1,19 @@
 import React from 'react'
-import NavLinks from './nav-links'
-import SocialLinks from '../components/social-links'
-import MobileNav from './mobile-nav'
-import DesktopNav from './desktop-nav'
+import SocialLinks from './SocialLinks'
+import MainNav from './MainNav'
+import { jsx, Container } from 'theme-ui'
 
 const Layout = ({ title, children }) => {
   return (
-    <div className='layout'>
+    <Container className='content-wrapper' sx={{ p: [3, 4, 5] }}>
       <header>
-        {/* Passing component in like this is not ideal, need to refactor to use render-prop pattern */}
-        <MobileNav navLinks={<NavLinks />} />
-        <DesktopNav navLinks={<NavLinks />} />
+        <MainNav />
       </header>
-      <main>
-        {children}
-      </main>
+      <main className='main-content'>{children}</main>
       <footer>
         <SocialLinks />
       </footer>
-    </div>
+    </Container>
   )
 }
 

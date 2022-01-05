@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import usePosts from '../hooks/use-posts'
-import PostPreview from '../components/post-preview'
+import PostPreview from '../components/PostPreview'
 
 const Blog = ({ location }) => {
   const posts = usePosts()

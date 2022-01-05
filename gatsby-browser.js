@@ -1,10 +1,6 @@
-// custom typefaces
-import '@fontsource/fugaz-one'
-
 // import 'prismjs/themes/prism.css'
-import './src/styles/global.css'
-import './src/styles/media-queries.css'
 import './src/styles/normalize.css'
-import './node_modules/devicon/devicon.css'
-import './src/styles/post-preview.css'
+import './src/styles/global.css'
+import './node_modules/devicon/devicon.min.css'
 import './src/styles/blog-post.css'
+import 'normalize.css'
