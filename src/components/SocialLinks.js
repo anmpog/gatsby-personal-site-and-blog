@@ -12,7 +12,7 @@ const SocialLink = styled.a`
   }
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.95;
     transition: opacity 0.3s;
   }
 `

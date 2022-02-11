@@ -2,5 +2,4 @@
 import './src/styles/normalize.css'
 import './src/styles/global.css'
 import './node_modules/devicon/devicon.min.css'
-import './src/styles/blog-post.css'
 import 'normalize.css'

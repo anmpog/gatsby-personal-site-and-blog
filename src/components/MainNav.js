@@ -30,6 +30,7 @@ const StyledButton = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: end;
   width: 1.75rem;
   height: 1.75rem;
   background: transparent;
@@ -41,21 +42,23 @@ const StyledButton = styled.button`
     outline: none;
   }
   div {
-    width: 1.75rem;
-    height: 0.25rem;
+    height: 0.1rem;
     background: ${props => props.theme.colors.primary};
-    border-radius: 10px;
+    border-radius: 1px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
     :first-of-type {
+      width: 1.75rem;
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     :nth-of-type(2) {
+      width: ${({ open }) => (open ? '1.75rem' : '1.5rem')};
       opacity: ${({ open }) => (open ? '0' : '1')};
       transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
     }
     :nth-of-type(3) {
+      width: ${({ open }) => (open ? '1.75rem' : '1.25rem')};
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
@@ -85,7 +88,7 @@ const StyledMenu = styled.div`
   height: 100vh;
   text-align: left;
   padding: 2rem;
-  min-width: 90%;
+  min-width: 75%;
   position: absolute;
   top: 0;
   left: 0;
@@ -201,7 +204,11 @@ const MainNav = ({ ...props }) => {
                 key={index}
                 sx={{
                   listStyle: 'none',
+                  fontSize: '20px',
                   marginRight: '2%',
+                  '&:last-of-type': {
+                    marginRight: 0,
+                  },
                 }}
               >
                 <Link to={link.link}>{link.name}</Link>

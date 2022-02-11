@@ -8,33 +8,33 @@ export default function Link({ children, to, ...props }) {
   // This example assumes that any internal link (intended for Gatsby)
   // will start with exactly one slash, and that anything else is external.
   const internal = /^\/(?!\/)/.test(to)
+  console.log('The to: ', to)
+  console.log('The internal: ', internal)
 
   // Use Gatsby Link for internal links, and <a> for others
-  if (internal) {
-    return (
-      <GatsbyLink
-        {...props}
-        to={to}
-        activeClassName='active'
-        partiallyActive={to == '/blog' ? true : null}
-        sx={{
-          color: 'muted',
-          textDecoration: 'none',
-          '&.active': {
-            color: 'primary',
-            textDecoration: 'underline',
-            fontWeight: 'bold'
-          },
-        }}
-      >
-        {children}
-      </GatsbyLink>
-    )
-  }
-
   return (
-    <a {...props} href={to} rel='noreferrer' target='_blank'>
+    <GatsbyLink
+      {...props}
+      to={to}
+      activeClassName='active'
+      partiallyActive={to == '/blog' ? true : null}
+      sx={{
+        color: 'muted',
+        textDecoration: 'none',
+        '&::before': {
+          content: '"\\00B7"',
+          marginRight: '3px',
+          visibility: 'hidden',
+        },
+        '&.active': {
+          color: 'primary',
+          '&::before': {
+            visibility: 'visible',
+          },
+        },
+      }}
+    >
       {children}
-    </a>
+    </GatsbyLink>
   )
 }

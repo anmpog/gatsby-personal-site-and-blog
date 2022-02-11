@@ -24,14 +24,13 @@ const theme = {
     '2.125rem',
     '3rem',
     '3.5rem',
-    '4.75rem',
+    '4.25rem',
   ],
   fontWeights: {
     body: 400,
     heading: 900,
     bold: 700,
   },
-  lettingSpacings: {},
   lineHeights: {
     heading: 1.25,
     body: 1.5,
@@ -47,196 +46,161 @@ const theme = {
   sizes: {
     container: '1200px',
   },
-  space: [0, 4, 8, 16, 24, 32],
+  space: [0, 4, 8, 16, 24, 32, 40],
   zIndices: [],
   breakpoints: ['520px', '768px', '800px', '1000px', '1120px'],
+  layout: {},
   styles: {
     root: {
-      fontSize: 1,
+      fontSize: '20px',
       fontFamily: 'body',
       lineHeight: 'body',
       p: {
         color: 'darken',
         lineHeight: 'body',
+        marginTop: 0,
+        marginBottom: 4,
         code: {
           backgroundColor: 'darken',
           color: 'text',
           padding: 1,
         },
       },
-    },
-    small: {
-      fontSize: 0,
-    },
-    a: {
-      color: 'secondary',
-    },
-    h1: {
-      color: 'primary',
-      fontSize: [4, 5, 6, 6, 7],
-      fontWeight: '900',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 5,
-      a: {
-        color: 'inherit',
+      div: {
+        section: {
+          // borderWidth: '2px',
+          // borderStyle: 'solid',
+          // borderColor: 'primary',
+          marginBottom: 6,
+          padding: 3,
+        },
       },
-    },
-    h2: {
-      color: 'primary',
-      fontSize: 6,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 4,
-      a: {
-        color: 'inherit',
+      h1: {
+        color: 'primary',
+        fontSize: [4, 5, 6, null, 7],
+        fontWeight: '900',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 5,
+        a: {
+          color: 'inherit',
+        },
       },
-    },
-    h3: {
-      color: 'text',
-      fontSize: 5,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 3,
-      a: {
-        color: 'inherit',
+      h2: {
+        color: 'primary',
+        fontSize: [3, 4, 5, null, 6],
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 4,
+        a: {
+          color: 'inherit',
+        },
       },
-    },
-    h4: {
-      color: 'text',
-      fontSize: 4,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 3,
-      a: {
-        color: 'inherit',
+      h3: {
+        color: 'primary',
+        fontSize: 4,
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 3,
+        a: {
+          color: 'inherit',
+        },
       },
-    },
-    h5: {
-      color: 'text',
-      fontSize: 3,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 3,
-      a: {
-        color: 'inherit',
+      h4: {
+        color: 'primary',
+        fontSize: 4,
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 3,
+        a: {
+          color: 'inherit',
+        },
       },
-    },
-    h6: {
-      color: 'text',
-      fontSize: 2,
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      fontFamily: 'heading',
-      marginTop: 0,
-      marginBottom: 3,
-    },
-    img: {},
-    pre: {
-      borderColor: 'gray',
-      borderStyle: 1,
-      borderWidth: 0,
-      backgroundColor: 'darken',
-      color: 'text',
-      lineHeight: 'body',
-      overflow: 'auto',
-      padding: 3,
-      code: {
-        backgroundColor: 'darken',
+      h5: {
+        color: 'primary',
+        fontSize: 3,
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 3,
+        a: {
+          color: 'inherit',
+        },
+      },
+      h6: {
+        color: 'primary',
+        fontSize: 2,
+        fontWeight: 'heading',
+        lineHeight: 'heading',
+        fontFamily: 'heading',
+        marginTop: 0,
+        marginBottom: 3,
+      },
+      ul: {
         color: 'text',
-        lineHeight: 'body',
       },
-    },
-    ol: {
-      color: 'text',
-    },
-    ul: {
-      color: 'text',
-    },
-    li: {
-      color: 'text',
-      lineHeight: 'body',
-    },
-    blockquote: {
-      borderLeftColor: 'primary',
-      borderLeftStyle: 0,
-      borderLeftWidth: 1,
-      padding: 2,
-      backgroundColor: 'darken',
-      p: {
-        margin: 0,
-      },
-    },
-    hr: {
-      border: 0,
-      borderStyle: 0,
-      color: 'muted',
-      marginTop: 5,
-      marginBottom: 5,
-    },
-    em: {},
-    table: {
-      color: 'text',
-      border: 0,
-      borderStyle: 0,
-      borderColor: 'gray',
-      borderCollapse: 'collapse',
-      mb: 3,
-    },
-    tr: {},
-    th: {
-      backgroundColor: 'darken',
-      border: 0,
-      borderStyle: 0,
-      borderColor: 'gray',
-      padding: 2,
-    },
-    td: {
-      border: 0,
-      borderStyle: 0,
-      borderColor: 'gray',
-      padding: 2,
-    },
-    strong: {},
-    del: {},
-    b: {},
-    i: {},
-    progress: {
-      backgroundColor: 'darken',
-      color: 'primary',
-      secondary: {
-        backgroundColor: 'darken',
-        color: 'secondary',
-      },
-    },
-    donut: {
-      primary: {
+      li: {
         color: 'primary',
-      },
-      secondary: {
-        color: 'secondary',
-      },
-    },
-    spinner: {
-      primary: {
-        color: 'primary',
-      },
-      secondary: {
-        color: 'secondary',
+        listStyle: 'square',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       },
     },
   },
-  box: {},
-  flex: {},
+  small: {
+    fontSize: 0,
+  },
+  a: {
+    color: 'secondary',
+  },
+  img: {},
+  pre: {
+    borderColor: 'gray',
+    borderStyle: 1,
+    borderWidth: 0,
+    backgroundColor: 'darken',
+    color: 'text',
+    lineHeight: 'body',
+    overflow: 'auto',
+    padding: 3,
+    code: {
+      backgroundColor: 'darken',
+      color: 'text',
+      lineHeight: 'body',
+    },
+  },
+  ol: {
+    color: 'text',
+  },
+
+  blockquote: {
+    borderLeftColor: 'primary',
+    borderLeftStyle: 0,
+    borderLeftWidth: 1,
+    padding: 2,
+    backgroundColor: 'darken',
+    p: {
+      margin: 0,
+    },
+  },
+  box: {
+    contentSection: {
+      // borderWidth: '2px',
+      // borderStyle: 'solid',
+      // borderColor: 'primary',
+      marginBottom: 6,
+      padding: 3,
+    },
+  },
   buttons: {
     backgroundColor: 'primary',
     primary: {
@@ -283,8 +247,6 @@ const theme = {
       color: 'primary',
       backgroundColor: 'muted',
     },
-    radio: {},
-    checkbox: {},
   },
 }
 

@@ -10,11 +10,23 @@ const BlogIndex = ({ location }) => {
     <>
       <Layout>
         <SEO title='anmpog.dev' location={location} />
-        <h1 sx={{ variant: 'styles.h1', mt: ['45%', '15%'] }}>
-          Hi, I&apos;m Anthony. I&apos;m a front-end web developer based in
-          Boulder, CO. I&apos;m excited about building, helping and sharing.
-          Let&apos;s make something cool together.
-        </h1>
+        <section>
+          <h1
+            sx={{
+              variant: 'styles.h1',
+              mt: [
+                'calc(35%-75px)',
+                'calc(25%-75px)',
+                null,
+                'calc(15% - 75px)',
+              ],
+            }}
+          >
+            Hi, I&apos;m Anthony. I&apos;m a front-end web developer based in
+            Boulder, CO. I&apos;m excited about building, helping and sharing.
+            Let&apos;s make something cool together.
+          </h1>
+        </section>
       </Layout>
     </>
   )

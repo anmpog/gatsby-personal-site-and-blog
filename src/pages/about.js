@@ -2,25 +2,99 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import {
-  HTMLIcon,
-  JavaScriptIcon,
-  NodeJSIcon,
-  ReactIcon,
-  MongoIcon,
-  CSSIcon,
-  GatsbyIcon,
-  FirefoxIcon,
-} from '../assets/dev-icons'
-import { jsx } from 'theme-ui'
+import Icon from '../components/shared/Icon'
+import { jsx, Box, Flex } from 'theme-ui'
+import theme from '../gatsby-plugin-theme-ui'
+
+// Components
+const StuffIUseListItem = ({ icon }) => {
+  return (
+    <li
+      sx={{
+        mb: 6,
+        flexBasis: '33.33%',
+        display: 'flex',
+        justifyContent: 'flex-start',
+      }}
+    >
+      <Flex
+        sx={{
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'darken',
+          borderRadius: '100%',
+          padding: 4,
+        }}
+      >
+        <Icon icon={icon} color={theme.colors.secondary} />
+      </Flex>
+    </li>
+  )
+}
+
+const StuffILikeListItem = ({ listTitle, listItems }) => {
+  return (
+    <li sx={{ display: 'flex', marginBottom: 6, color: 'darken' }}>
+      <lh sx={{ flexBasis: '25%', fontWeight: 'bold' }}>{listTitle}:</lh>
+      <ul sx={{ flexBasis: '75%', display: 'flex', padding: 0, margin: 0 }}>
+        {listItems.map((listItem, index) => {
+          return (
+            <li key={index} sx={{ mr: 3, color: 'darken' }}>
+              {listItem}
+              {index !== listItems.length - 1 ? ',' : ''}
+            </li>
+          )
+        })}
+      </ul>
+    </li>
+  )
+}
+
+const StuffIveLearnedListItem = ({
+  courseUrl,
+  courseTitle,
+  courseProvider,
+  courseAuthor,
+}) => {
+  return (
+    <a
+      href={courseUrl}
+      referrer='noreferrer'
+      target='_blank'
+      sx={{ 
+        textDecoration: 'none',
+        '&:hover': {
+          opacity: '0.95'
+        }
+       }}
+    >
+      <Flex
+        sx={{
+          flexDirection: 'column',
+          marginBottom: 6,
+          backgroundColor: 'muted',
+          borderRadius: '.3rem',
+          padding: 3
+        }}
+      >
+        <h5>{courseTitle}</h5>
+        <p sx={{ color: 'background' }}>{courseProvider}</p>
+        <p sx={{ color: 'background' }}>{courseAuthor}</p>
+      </Flex>
+    </a>
+  )
+}
 
 const About = ({ location }) => {
   return (
     <Layout>
       <SEO title='About Me' location={location} />
-      <section>
-        <h2 sx={{ variant: 'styles.h2' }}>Stuff about me</h2>
-        <div>
+      <Flex
+        variant='box.contentSection'
+        sx={{ flexDirection: ['column', null, null, 'row'] }}
+      >
+        <h3 sx={{ flexBasis: '25%' }}>Stuff about me</h3>
+        <Flex sx={{ flexDirection: 'column', flexBasis: '75%' }}>
           <p>
             I'm Anthony! I'm a self-taught web developer who lives in Boulder,
             Colorado. I am primarily a JavaScript developer, and I gravitate
@@ -35,171 +109,135 @@ const About = ({ location }) => {
             cooking, making/consuming music, video games, watches, my cat Bean,
             being unnecessarily verbose, and using the word "rad" unironically.
           </p>
-        </div>
-      </section>
+        </Flex>
+      </Flex>
 
-      <section>
-        <h2 sx={{ variant: 'styles.h2' }}>Stuff I Use</h2>
-        <div>
-          <ul>
-            <li>
-              <JavaScriptIcon />
-            </li>
-            <li>
-              <NodeJSIcon />
-            </li>
-            <li>
-              <ReactIcon />
-            </li>
-            <li>
-              <CSSIcon />
-            </li>
-            <li>
-              <HTMLIcon />
-            </li>
-            <li>
-              <MongoIcon />
-            </li>
-            <li>
-              <GatsbyIcon />
-            </li>
-            <li>
-              <FirefoxIcon />
-            </li>
-          </ul>
-        </div>
-      </section>
+      <Flex variant='box.contentSection'>
+        <h3 sx={{ flexBasis: '25%' }}>Stuff I Use</h3>
+        <ul
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexBasis: '75%',
+            margin: 0,
+            padding: 0,
+          }}
+        >
+          <StuffIUseListItem icon='javascript' />
+          <StuffIUseListItem icon='node' />
+          <StuffIUseListItem icon='react' />
+          <StuffIUseListItem icon='css' />
+          <StuffIUseListItem icon='html' />
+          <StuffIUseListItem icon='mongo' />
+          <StuffIUseListItem icon='gatsby' />
+          <StuffIUseListItem icon='firefox' />
+        </ul>
+      </Flex>
 
-      <section>
-        <h2 sx={{ variant: 'styles.h2' }}>Stuff I Like</h2>
-        <div>
-          <ul>
-            <li>
-              <p>authors:</p>
-              <p>Cormac McCarthy, Dostoevsky, Alexandre Dumas</p>
-            </li>
-            <li>
-              <p>artists:</p>
-              <p>All Them Witches, Jason Isbell, ERRA</p>
-            </li>
-            <li>
-              <p>films:</p>
-              <p>There Will Be Blood, What Dreams May Come, Hereditary</p>
-            </li>
-            <li>
-              <p>bikes:</p>
-              <p>Pivot Cycles, Parlee</p>
-            </li>
-            <li>
-              <p>games:</p>
-              <p>League of Legends, Escape from Tarkov, Battlefield</p>
-            </li>
+      <Flex variant='box.contentSection'>
+        <h3 sx={{ flexBasis: '25%' }}>Stuff I Like</h3>
+        <Flex sx={{ justifyContent: 'flex-start', flexBasis: '75%' }}>
+          <ul
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              margin: 0,
+              padding: 0,
+              width: '100%',
+            }}
+          >
+            <StuffILikeListItem
+              listTitle='authors'
+              listItems={['Cormac McCarthy', 'Dostoevsky', 'Alexndre Dumas']}
+            />
+            <StuffILikeListItem
+              listTitle='artists'
+              listItems={['All Them Witches', 'Jason Isbell', 'ERRA']}
+            />
+            <StuffILikeListItem
+              listTitle='films'
+              listItems={[
+                'There Will Be Blood',
+                'What Dreams May Come',
+                'Hereditary',
+              ]}
+            />
+            <StuffILikeListItem
+              listTitle='bikes'
+              listItems={['Pivot Cycles', 'Parlee']}
+            />
+            <StuffILikeListItem
+              listTitle='games'
+              listItems={[
+                'League of Legends',
+                'Escape from Tarkov',
+                'Battlefield',
+              ]}
+            />
           </ul>
-        </div>
-      </section>
+        </Flex>
+      </Flex>
 
-      <section>
-        <h2 sx={{ variant: 'styles.h2' }}>Stuff I've Learned</h2>
-        <div>
-          <ul>
-            <a
-              href='https://frontendmasters.com/courses/web-development-v2/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>Complete Intro to Web Development, v2</h4>
-                <p>Frontend Masters</p>
-                <p>Brian Holt</p>
-              </li>
-            </a>
-            <a
-              href='https://frontendmasters.com/courses/css-grids-flexbox/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>CSS Grids and Flexbox for Responsive Web Design</h4>
-                <p>Frontend Masters</p>
-                <p>Jen Kramer</p>
-              </li>
-            </a>
-            <a
-              href='https://frontendmasters.com/courses/js-fundamentals-functional-v2/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>JavaScript: From Fundamentals to Functional JS, v2</h4>
-                <p>Frontend Masters</p>
-                <p>Bianca Gandolfo</p>
-              </li>
-            </a>
-            <a
-              href='https://frontendmasters.com/courses/javascript-hard-parts-v2/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>JavaScript: The Hard Parts, v2</h4>
-                <p>Frontend Masters</p>
-                <p>Will Sentance</p>
-              </li>
-            </a>
-            <a
-              href='https://frontendmasters.com/courses/node-js/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>Introduction to Node.js</h4>
-                <p>Frontend Masters</p>
-                <p>Scott Moss</p>
-              </li>
-            </a>
-            <a href='https://ui.dev/react/' target='_blank' rel='noreferrer'>
-              <li>
-                <h4>React</h4>
-                <p>ui.dev</p>
-                <p>Tyler McGinnis</p>
-              </li>
-            </a>
-            <a
-              href='https://ui.dev/react-hooks/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>React Hooks</h4>
-                <p>ui.dev</p>
-                <p>Tyler McGinnis</p>
-              </li>
-            </a>
-            <a
-              href='https://ui.dev/advanced-javascript/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>Advanced JavaScript</h4>
-                <p>ui.dev</p>
-                <p>Tyler McGinnis</p>
-              </li>
-            </a>
-            <a
-              href='https://ui.dev/modern-javascript/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <li>
-                <h4>Modern JavaScript</h4>
-                <p>ui.dev</p>
-                <p>Tyler McGinnis</p>
-              </li>
-            </a>
-          </ul>
-        </div>
-      </section>
+      <Flex variant='box.contentSection'>
+        <h3 sx={{ flexBasis: '25%' }}>Stuff I've Learned</h3>
+
+        <ul sx={{ flexBasis: '75%', margin: 0, padding: 0 }}>
+          <StuffIveLearnedListItem
+            courseUrl='https://frontendmasters.com/courses/web-development-v2/'
+            courseTitle='Complete Intro to Web Development, v2'
+            courseProvider='Frontend Masters'
+            courseAuthor='Brian Holt'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://frontendmasters.com/courses/css-grids-flexbox/'
+            courseTitle='CSS Grids and Flexbox for Responsive Web Design'
+            courseProvider='Frontend Masters'
+            courseAuthor='Jen Kramer'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://frontendmasters.com/courses/js-fundamentals-functional-v2/'
+            courseTitle='JavaScript: From Fundamentals to Functional JS, v2'
+            courseProvider='Frontend Masters'
+            courseAuthor='Bianca Gandolfo'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://frontendmasters.com/courses/javascript-hard-parts-v2/'
+            courseTitle='JavaScript: The Hard Parts, v2'
+            courseProvider='Frontend Masters'
+            courseAuthor='Will Sentance'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://frontendmasters.com/courses/node-js/'
+            courseTitle='Introduction to Node.js'
+            courseProvider='Frontend Masters'
+            courseAuthor='Scott Moss'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://ui.dev/react/'
+            courseTitle='React'
+            courseProvider='ui.dev'
+            courseAuthor='Tyler McGinnis'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://ui.dev/react-hooks/'
+            courseTitle='React Hooks'
+            courseProvider='ui.dev'
+            courseAuthor='Tyler McGinnis'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://ui.dev/advanced-javascript/'
+            courseTitle='Advanced JavaScript'
+            courseProvider='ui.dev'
+            courseAuthor='Tyler McGinnis'
+          />
+          <StuffIveLearnedListItem
+            courseUrl='https://ui.dev/modern-javascript/'
+            courseTitle='Modern JavaScript'
+            courseProvider='ui.dev'
+            courseAuthor='Tyler McGinnis'
+          />
+        </ul>
+      </Flex>
     </Layout>
   )
 }

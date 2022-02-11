@@ -1,25 +1,38 @@
 /** @jsx jsx */
 import React from 'react'
 import Link from './shared/Link'
-import { jsx } from 'theme-ui'
+import { jsx, Box } from 'theme-ui'
 
 const PostPreview = ({ post }) => {
+  const { slug, title, date, description } = post
   return (
-    <Link to={post.slug}>
-      <article className='post-preview' key={post.slug}>
-        <header>
-          <h2 sx={{ variant: 'styles.h2' }}>{post.title}</h2>
-          <time dateTime={post.date}>
-            {post.date}
-          </time>
-          <hr></hr>
-        </header>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: post.description,
-          }}
-        />
-      </article>
+    <Link to={`/blog/${slug}`} sx={{ '&:hover': { opacity: '.95' } }}>
+      <Box
+        sx={{
+          backgroundColor: 'muted',
+          padding: 3,
+          borderRadius: '.2rem',
+          margin: '0 auto'
+        }}
+      >
+        <article key={slug}>
+          <header sx={{ marginBottom: 4 }}>
+            <h3>{title}</h3>
+            <time
+              dateTime={date}
+              sx={{ color: 'background', fontWeight: 'bold' }}
+            >
+              {date}
+            </time>
+          </header>
+          <p
+            sx={{ color: 'background' }}
+            dangerouslySetInnerHTML={{
+              __html: description,
+            }}
+          />
+        </article>
+      </Box>
     </Link>
   )
 }

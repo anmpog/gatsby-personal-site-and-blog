@@ -34,7 +34,7 @@ const Bio = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <p className='bio'>
+    <p>
       Written by <strong>{author.name}</strong> {author.summary}
     </p>
   )
