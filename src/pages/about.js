@@ -11,19 +11,19 @@ const StuffIUseListItem = ({ icon }) => {
   return (
     <li
       sx={{
-        mb: 6,
+        mb: [3, null, null, 6],
         flexBasis: '33.33%',
         display: 'flex',
-        justifyContent: 'flex-start',
+        justifyContent: ['center', null, null, 'flex-start'],
       }}
     >
       <Flex
         sx={{
-          borderWidth: '2px',
+          borderWidth: ['0px', null, null, '2px'],
           borderStyle: 'solid',
           borderColor: 'darken',
           borderRadius: '100%',
-          padding: 4,
+          padding: ['0px', null, null, 4],
         }}
       >
         <Icon icon={icon} color={theme.colors.secondary} />
@@ -34,12 +34,41 @@ const StuffIUseListItem = ({ icon }) => {
 
 const StuffILikeListItem = ({ listTitle, listItems }) => {
   return (
-    <li sx={{ display: 'flex', marginBottom: 6, color: 'darken' }}>
-      <lh sx={{ flexBasis: '25%', fontWeight: 'bold' }}>{listTitle}:</lh>
-      <ul sx={{ flexBasis: '75%', display: 'flex', padding: 0, margin: 0 }}>
+    <li
+      sx={{
+        display: 'flex',
+        marginBottom: [4, null, null, 6],
+        color: 'darken',
+        // flexWrap: 'wrap',
+      }}
+    >
+      <lh
+        sx={{ flexBasis: '20%', fontWeight: 'bold', alignSelf: 'flex-start' }}
+      >
+        {listTitle}:
+      </lh>
+      <ul
+        sx={{
+          flex: '1 1 80%',
+          flexWrap: 'wrap',
+          display: 'flex',
+          padding: 0,
+          margin: 0,
+          flexDirection: ['column', null, 'row', 'row'],
+          justifyContent: 'flex-start',
+        }}
+      >
         {listItems.map((listItem, index) => {
           return (
-            <li key={index} sx={{ mr: 3, color: 'darken' }}>
+            <li
+              key={index}
+              sx={{
+                mr: 3,
+                color: 'darken',
+                textAlign: 'left',
+                border: '2px solid red',
+              }}
+            >
               {listItem}
               {index !== listItems.length - 1 ? ',' : ''}
             </li>
@@ -61,12 +90,13 @@ const StuffIveLearnedListItem = ({
       href={courseUrl}
       referrer='noreferrer'
       target='_blank'
-      sx={{ 
+      sx={{
         textDecoration: 'none',
         '&:hover': {
-          opacity: '0.95'
-        }
-       }}
+          opacity: '0.95',
+          transition: 'opacity ease-in 0.2s'
+        },
+      }}
     >
       <Flex
         sx={{
@@ -74,7 +104,7 @@ const StuffIveLearnedListItem = ({
           marginBottom: 6,
           backgroundColor: 'muted',
           borderRadius: '.3rem',
-          padding: 3
+          padding: 3,
         }}
       >
         <h5>{courseTitle}</h5>
@@ -112,7 +142,10 @@ const About = ({ location }) => {
         </Flex>
       </Flex>
 
-      <Flex variant='box.contentSection'>
+      <Flex
+        variant='box.contentSection'
+        sx={{ flexDirection: ['column', null, null, 'row'] }}
+      >
         <h3 sx={{ flexBasis: '25%' }}>Stuff I Use</h3>
         <ul
           sx={{
@@ -134,7 +167,10 @@ const About = ({ location }) => {
         </ul>
       </Flex>
 
-      <Flex variant='box.contentSection'>
+      <Flex
+        variant='box.contentSection'
+        sx={{ flexDirection: ['column', null, null, 'row'] }}
+      >
         <h3 sx={{ flexBasis: '25%' }}>Stuff I Like</h3>
         <Flex sx={{ justifyContent: 'flex-start', flexBasis: '75%' }}>
           <ul
@@ -178,9 +214,11 @@ const About = ({ location }) => {
         </Flex>
       </Flex>
 
-      <Flex variant='box.contentSection'>
+      <Flex
+        variant='box.contentSection'
+        sx={{ flexDirection: ['column', null, null, 'row'] }}
+      >
         <h3 sx={{ flexBasis: '25%' }}>Stuff I've Learned</h3>
-
         <ul sx={{ flexBasis: '75%', margin: 0, padding: 0 }}>
           <StuffIveLearnedListItem
             courseUrl='https://frontendmasters.com/courses/web-development-v2/'
