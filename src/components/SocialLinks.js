@@ -22,7 +22,8 @@ const SocialLinks = () => {
     <div
       sx={{
         display: 'flex',
-        justifyContent: ['center', 'center', 'flex-start'],
+        justifyContent: ['center', null, 'flex-start'],
+        px: [1, 2, 3],
       }}
     >
       <SocialLink

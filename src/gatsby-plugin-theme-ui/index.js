@@ -57,7 +57,7 @@ const theme = {
       lineHeight: 'body',
       p: {
         color: 'darken',
-        lineHeight: 'body',
+        lineHeight: [1.25, 1.3, 'body'],
         marginTop: 0,
         marginBottom: 4,
         code: {
@@ -68,9 +68,6 @@ const theme = {
       },
       div: {
         section: {
-          // borderWidth: '2px',
-          // borderStyle: 'solid',
-          // borderColor: 'primary',
           marginBottom: 6,
           padding: 3,
         },
@@ -101,7 +98,7 @@ const theme = {
       },
       h3: {
         color: 'primary',
-        fontSize: 4,
+        fontSize: [3, null, 4],
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
@@ -125,7 +122,7 @@ const theme = {
       },
       h5: {
         color: 'primary',
-        fontSize: 3,
+        fontSize: [2, 3],
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
@@ -137,7 +134,7 @@ const theme = {
       },
       h6: {
         color: 'primary',
-        fontSize: 2,
+        fontSize: [1, 2],
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
@@ -198,7 +195,7 @@ const theme = {
       // borderStyle: 'solid',
       // borderColor: 'primary',
       marginBottom: 6,
-      padding: 3,
+      padding: [1, 2, 3],
     },
   },
   buttons: {

@@ -9,12 +9,13 @@ import theme from '../gatsby-plugin-theme-ui'
 // Components
 const StuffIUseListItem = ({ icon }) => {
   return (
-    <li
+    <Flex
+      as='li'
       sx={{
         mb: [3, null, null, 6],
-        flexBasis: '33.33%',
         display: 'flex',
-        justifyContent: ['center', null, null, 'flex-start'],
+        justifyContent: ['center', null, null, null, 'flex-start'],
+        flex: '0 1 33.33%',
       }}
     >
       <Flex
@@ -28,7 +29,7 @@ const StuffIUseListItem = ({ icon }) => {
       >
         <Icon icon={icon} color={theme.colors.secondary} />
       </Flex>
-    </li>
+    </Flex>
   )
 }
 
@@ -39,7 +40,6 @@ const StuffILikeListItem = ({ listTitle, listItems }) => {
         display: 'flex',
         marginBottom: [4, null, null, 6],
         color: 'darken',
-        // flexWrap: 'wrap',
       }}
     >
       <lh
@@ -65,8 +65,6 @@ const StuffILikeListItem = ({ listTitle, listItems }) => {
               sx={{
                 mr: 3,
                 color: 'darken',
-                textAlign: 'left',
-                border: '2px solid red',
               }}
             >
               {listItem}
@@ -94,22 +92,22 @@ const StuffIveLearnedListItem = ({
         textDecoration: 'none',
         '&:hover': {
           opacity: '0.95',
-          transition: 'opacity ease-in 0.2s'
+          transition: 'opacity ease-in 0.2s',
         },
       }}
     >
       <Flex
         sx={{
           flexDirection: 'column',
-          marginBottom: 6,
+          marginBottom: [3, 4, 5, 6],
           backgroundColor: 'muted',
           borderRadius: '.3rem',
           padding: 3,
         }}
       >
         <h5>{courseTitle}</h5>
-        <p sx={{ color: 'background' }}>{courseProvider}</p>
-        <p sx={{ color: 'background' }}>{courseAuthor}</p>
+        <h6 sx={{ color: 'background' }}>{courseProvider}</h6>
+        <h6 sx={{ color: 'background' }}>{courseAuthor}</h6>
       </Flex>
     </a>
   )
@@ -121,9 +119,9 @@ const About = ({ location }) => {
       <SEO title='About Me' location={location} />
       <Flex
         variant='box.contentSection'
-        sx={{ flexDirection: ['column', null, null, 'row'] }}
+        sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%' }}>Stuff about me</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff about me</h3>
         <Flex sx={{ flexDirection: 'column', flexBasis: '75%' }}>
           <p>
             I'm Anthony! I'm a self-taught web developer who lives in Boulder,
@@ -144,9 +142,9 @@ const About = ({ location }) => {
 
       <Flex
         variant='box.contentSection'
-        sx={{ flexDirection: ['column', null, null, 'row'] }}
+        sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%' }}>Stuff I Use</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff I Use</h3>
         <ul
           sx={{
             display: 'flex',
@@ -169,9 +167,9 @@ const About = ({ location }) => {
 
       <Flex
         variant='box.contentSection'
-        sx={{ flexDirection: ['column', null, null, 'row'] }}
+        sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%' }}>Stuff I Like</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff I Like</h3>
         <Flex sx={{ justifyContent: 'flex-start', flexBasis: '75%' }}>
           <ul
             sx={{
@@ -216,7 +214,7 @@ const About = ({ location }) => {
 
       <Flex
         variant='box.contentSection'
-        sx={{ flexDirection: ['column', null, null, 'row'] }}
+        sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
         <h3 sx={{ flexBasis: '25%' }}>Stuff I've Learned</h3>
         <ul sx={{ flexBasis: '75%', margin: 0, padding: 0 }}>
