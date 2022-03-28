@@ -24,6 +24,7 @@ const SocialLinks = () => {
         display: 'flex',
         justifyContent: ['center', null, 'flex-start'],
         px: [1, 2, 3],
+        mt: [3, null, null, 5]
       }}
     >
       <SocialLink

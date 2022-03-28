@@ -1,3 +1,5 @@
+import { darken } from '@theme-ui/color'
+
 const theme = {
   borders: ['1px'],
   borderStyles: ['solid', 'dashed'],
@@ -143,13 +145,35 @@ const theme = {
       },
       ul: {
         color: 'text',
+        padding: 0,
       },
       li: {
         color: 'primary',
         listStyle: 'square',
         display: 'flex',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         alignItems: 'center',
+      },
+      a: {
+        color: 'muted',
+        textDecoration: 'none',
+        '&::before': {
+          content: '"\\00B7"',
+          marginRight: '3px',
+          visibility: 'hidden',
+        },
+        '&:hover': {
+          color: darken('muted', 0.1),
+        },
+        '&.active': {
+          color: 'primary',
+          '&:hover': {
+            color: darken('primary', 0.1),
+          },
+          '&::before': {
+            visibility: 'visible',
+          },
+        },
       },
     },
   },
@@ -191,9 +215,6 @@ const theme = {
   },
   box: {
     contentSection: {
-      // borderWidth: '2px',
-      // borderStyle: 'solid',
-      // borderColor: 'primary',
       marginBottom: 6,
       padding: [1, 2, 3],
     },
@@ -220,8 +241,28 @@ const theme = {
     heading: {},
   },
   links: {
-    nav: {
-      color: 'primary',
+    internalLink: {
+      border: '2px solid red',
+      color: 'muted',
+      textDecoration: 'none',
+      '&::before': {
+        content: '"\\00B7"',
+        marginRight: '3px',
+        visibility: 'hidden',
+      },
+      '&.active': {
+        color: 'primary',
+        '&::before': {
+          visibility: 'visible',
+        },
+      },
+    },
+    externalLink: {
+      color: 'secondary',
+      textDecoration: 'none',
+      '&:hover': {
+        color: darken('secondary', 0.1),
+      },
     },
   },
   forms: {

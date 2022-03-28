@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Icon from '../components/shared/Icon'
@@ -99,7 +99,7 @@ const StuffIveLearnedListItem = ({
       <Flex
         sx={{
           flexDirection: 'column',
-          marginBottom: [3, 4, 5, 6],
+          marginBottom: [2, 3, null, 4],
           backgroundColor: 'muted',
           borderRadius: '.3rem',
           padding: 3,
@@ -110,6 +110,16 @@ const StuffIveLearnedListItem = ({
         <h6 sx={{ color: 'background' }}>{courseAuthor}</h6>
       </Flex>
     </a>
+  )
+}
+
+const CounterButton1 = () => {
+  let [count, setCount] = React.useState(0)
+  return (
+    <>
+      {count}
+      <button onClick={() => setCount}>Click to increment</button>
+    </>
   )
 }
 

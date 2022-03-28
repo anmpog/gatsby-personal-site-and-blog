@@ -99,8 +99,8 @@ Before digging into some more technical examples, it might be good to think thro
 
 ### Further Reading
 
-1.) [Looping code](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code) from Mozilla Developer Network - the gold standard for information on web development.
+1.) <Link to={'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code'}>Looping code</Link> from Mozilla Developer Network - the gold standard for information on web development.
 
-2.) Though [this example](https://www.dataquest.io/blog/python-for-loop-tutorial/) is in Python, it still discusses looping in a general way and the concepts discussed are applicable to any language.
+2.) Though <Link to={'https://www.dataquest.io/blog/python-for-loop-tutorial/'}>this example</Link> is in Python, it still discusses looping in a general way and the concepts discussed are applicable to any language.
 
-3.) [This video](https://www.youtube.com/watch?v=eSYeHlwDCNA) from CodeCademy does basically what the article above was aiming for, but in video form.
+3.) <Link to={'https://www.youtube.com/watch?v=eSYeHlwDCNA'}>This video</Link> from CodeCademy does basically what the article above was aiming for, but in video form.

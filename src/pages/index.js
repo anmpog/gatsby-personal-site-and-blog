@@ -13,7 +13,6 @@ const BlogIndex = ({ location }) => {
         <section>
           <h1
             sx={{
-              variant: 'styles.h1',
               mt: [
                 'calc(35%-75px)',
                 'calc(25%-75px)',

@@ -12,7 +12,8 @@ const PostPreview = ({ post }) => {
           backgroundColor: 'muted',
           padding: 3,
           borderRadius: '.2rem',
-          margin: '0 auto'
+          mx: 'auto',
+          mb: [2, 3, null, 4]
         }}
       >
         <article key={slug}>

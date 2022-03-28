@@ -9,7 +9,7 @@ import { jsx, ThemeProvider, Container, Box } from 'theme-ui'
 import theme from '../gatsby-plugin-theme-ui'
 
 // Hook for detecting click/touch outside of nav
-export const useOnClickOutside = (ref, handler) => {
+export function useOnClickOutside(ref, handler) {
   useEffect(() => {
     const listener = event => {
       if (!ref.current || ref.current.contains(event.target)) {
@@ -53,12 +53,12 @@ const StyledButton = styled.button`
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
     }
     :nth-of-type(2) {
-      width: ${({ open }) => (open ? '1.75rem' : '1.5rem')};
+      width: 1.75rem;
       opacity: ${({ open }) => (open ? '0' : '1')};
       transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')};
     }
     :nth-of-type(3) {
-      width: ${({ open }) => (open ? '1.75rem' : '1.25rem')};
+      width: 1.75rem;
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
