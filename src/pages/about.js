@@ -40,10 +40,18 @@ const StuffILikeListItem = ({ listTitle, listItems }) => {
         display: 'flex',
         marginBottom: [4, null, null, 6],
         color: 'darken',
+        listStyle: 'none',
+        flexDirection: ['column'],
+        alignItems: ['flex-start'],
       }}
     >
       <lh
-        sx={{ flexBasis: '20%', fontWeight: 'bold', alignSelf: 'flex-start' }}
+        sx={{
+          flexBasis: '20%',
+          fontWeight: 'bold',
+          alignSelf: 'flex-start',
+          mb: 2,
+        }}
       >
         {listTitle}:
       </lh>
@@ -65,6 +73,7 @@ const StuffILikeListItem = ({ listTitle, listItems }) => {
               sx={{
                 mr: 3,
                 color: 'darken',
+                listStyle: 'none',
               }}
             >
               {listItem}
@@ -192,7 +201,7 @@ const About = ({ location }) => {
           >
             <StuffILikeListItem
               listTitle='authors'
-              listItems={['Cormac McCarthy', 'Dostoevsky', 'Alexndre Dumas']}
+              listItems={['Cormac McCarthy', 'Dostoevsky', 'Alexandre Dumas']}
             />
             <StuffILikeListItem
               listTitle='artists'

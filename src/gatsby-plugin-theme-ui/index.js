@@ -157,11 +157,11 @@ const theme = {
       a: {
         color: 'muted',
         textDecoration: 'none',
-        '&::before': {
-          content: '"\\00B7"',
-          marginRight: '3px',
-          visibility: 'hidden',
-        },
+        // '&::before': {
+        //   content: '"\\00B7"',
+        //   marginRight: '3px',
+        //   visibility: 'hidden',
+        // },
         '&:hover': {
           color: darken('muted', 0.1),
         },

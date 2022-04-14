@@ -20,22 +20,22 @@ const Link = ({ children, to, ...props }) => {
         to={to}
         activeClassName='active'
         partiallyActive={to == '/blog' ? true : null}
-        // variant={'links.internalLink'}
-        // sx={{
-        //   color: 'muted',
-        //   textDecoration: 'none',
-        //   '&::before': {
-        //     content: '"\\00B7"',
-        //     marginRight: '3px',
-        //     visibility: 'hidden',
-        //   },
-        //   '&.active': {
-        //     color: 'primary',
-        //     '&::before': {
-        //       visibility: 'visible',
-        //     },
-        //   },
-        // }}
+        variant={'links.internalLink'}
+        sx={{
+          color: 'muted',
+          textDecoration: 'none',
+          '&::before': {
+            content: '"\\00B7"',
+            marginRight: '3px',
+            visibility: 'hidden',
+          },
+          '& .active': {
+            color: 'primary',
+            '&::before': {
+              visibility: 'visible',
+            },
+          },
+        }}
         {...props}
       >
         {children}
