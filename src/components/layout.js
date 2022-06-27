@@ -6,10 +6,7 @@ import { jsx, Container } from 'theme-ui'
 
 const Layout = ({ title, children }) => {
   return (
-    <Container
-      className='content-wrapper'
-      sx={{ padding: [2, 4, 5], border: '5px solid red' }}
-    >
+    <Container className='content-wrapper' sx={{ padding: [2, 4, 5] }}>
       <header sx={{ marginBottom: [3, null, null, '75px'] }}>
         <MainNav />
       </header>

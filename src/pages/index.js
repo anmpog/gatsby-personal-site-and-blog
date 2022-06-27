@@ -14,11 +14,13 @@ const BlogIndex = ({ location }) => {
           <h1
             sx={{
               mt: [
-                'calc(35%-75px)',
+                'calc(30%-75px)',
                 'calc(25%-75px)',
                 null,
-                'calc(15% - 75px)',
+                'calc(10% - 75px)',
               ],
+              marginBottom: '0px',
+              fontSize: ['1.75rem', '5vw', null, null, null, '4rem'],
             }}
           >
             Hi, I&apos;m Anthony. I&apos;m a front-end web developer based in
