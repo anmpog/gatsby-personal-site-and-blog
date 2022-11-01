@@ -1,41 +1,9 @@
 /** @jsx jsx */
-import React, { useState, useRef, useEffect } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Link from './shared/Link'
-import { jsx, Box, Flex } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
+import MobileNav from './Nav/MobileNav'
 
-// Hook for detecting click/touch outside of nav
-export function useOnClickOutside(ref, handler) {
-  useEffect(() => {
-    const listener = event => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return
-      }
-      handler(event)
-    }
-    document.addEventListener('mousedown', listener)
-    return () => {
-      document.removeEventListener('mousedown', listener)
-    }
-  }, [ref, handler])
-}
-
-//
-// Main navigation component
-//
-
-const BurgerDiv = () => {
-  return (
-    <div
-      sx={{
-        height: '2px',
-        color: 'red',
-        width: '100%',
-        border: '2px solid red',
-      }}
-    />
-  )
-}
 const MainNav = ({ ...props }) => {
   const navLinkData = useStaticQuery(graphql`
     query navLinksQuery {
@@ -56,60 +24,31 @@ const MainNav = ({ ...props }) => {
     },
   } = navLinkData
 
-  const [open, setOpen] = useState(false)
-  const node = useRef()
-  useOnClickOutside(node, () => setOpen(false))
-
   return (
-    <Box as='nav' ref={node} sx={{ position: 'relative' }}>
-      <button
+    <Flex
+      as='nav'
+      sx={{
+        width: '100%',
+        justifyContent: 'flex-end',
+        position: 'relative',
+      }}
+    >
+      <ul
         sx={{
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          padding: '0px',
-          color: 'primary',
-          height: '32px',
-          width: '32px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: 1,
-          display: ['flex', 'none'],
-          zIndex: 15,
-        }}
-        onClick={() => {
-          setOpen(!open)
+          display: ['none', 'grid'],
+          gridAutoFlow: 'row',
+          gridTemplateColumns: 'repeat(4, auto)',
+          gap: 3,
         }}
       >
-        <BurgerDiv />
-        <BurgerDiv />
-        <BurgerDiv />
-      </button>
-      <Flex
-        as='ul'
-        sx={{
-          justifyContent: ['space-evenly', 'flex-end'],
-          alignItems: 'center',
-          position: ['absolute', 'static'],
-          flexDirection: ['column', 'row'],
-          backgroundColor: 'background',
-          width: '100%',
-          height: [open ? '175px' : null, '45px'],
-          zIndex: 10,
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        {menuLinks.map((link, index) => {
+        {menuLinks.map(link => {
           return (
             <li
-              key={index}
+              key={link.name}
               sx={{
                 listStyle: 'none',
                 fontSize: '20px',
                 marginRight: '2%',
-                display: [open ? 'block' : 'none', 'block'],
                 '&:last-of-type': {
                   marginRight: 0,
                 },
@@ -119,8 +58,9 @@ const MainNav = ({ ...props }) => {
             </li>
           )
         })}
-      </Flex>
-    </Box>
+      </ul>
+      <MobileNav links={menuLinks} />
+    </Flex>
   )
 }
 
