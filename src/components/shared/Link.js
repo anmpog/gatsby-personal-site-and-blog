@@ -1,12 +1,9 @@
 /** @jsx jsx */
-import React from 'react' // eslint-disable-line no-unused-vars
+import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { jsx, Link as ThemeUILink } from 'theme-ui'
 
-const Link = ({ children, to, ...props }) => {
-  // Tailor the following test to your environment.
-  // This example assumes that any internal link (intended for Gatsby)
-  // will start with exactly one slash, and that anything else is external.
+const Link = ({ children, to, styles, ...props }) => {
   const linkType =
     to.startsWith('http://') || to.startsWith('https://')
       ? 'external'
@@ -22,7 +19,7 @@ const Link = ({ children, to, ...props }) => {
         partiallyActive={to == '/blog' ? true : null}
         variant={'links.internalLink'}
         sx={{
-          color: 'muted',
+          color: ['text', 'muted'],
           textDecoration: 'none',
           '&::before': {
             content: '"\\00B7"',
@@ -35,6 +32,7 @@ const Link = ({ children, to, ...props }) => {
               visibility: 'visible',
             },
           },
+          ...styles,
         }}
         {...props}
       >
@@ -42,11 +40,11 @@ const Link = ({ children, to, ...props }) => {
       </GatsbyLink>
     )
   }
+
   if (linkType === 'external') {
     return (
       <ThemeUILink
         href={to}
-        activeClassName='active'
         target='blank'
         rel='external'
         variant={'links.externalLink'}

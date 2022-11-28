@@ -1,36 +1,54 @@
 /** @jsx jsx */
-import React from 'react'
 import Layout from '../components/layout'
-import { jsx, Themed, Container } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
 import SEO from '../components/seo'
 
-const BlogIndex = ({ location }) => {
+const Home = ({ location }) => {
   return (
-    <>
-      <Layout>
-        <SEO title='anmpog.dev' location={location} />
-        <section>
-          <h1
-            sx={{
-              mt: [
-                'calc(30%-75px)',
-                'calc(25%-75px)',
-                null,
-                'calc(10% - 75px)',
-              ],
-              marginBottom: '0px',
-              fontSize: ['1.75rem', '5vw', null, null, null, '4rem'],
-            }}
-          >
-            Hi, I&apos;m Anthony. I&apos;m a front-end web developer based in
-            Boulder, CO. I&apos;m excited about building, helping and sharing.
-            Let&apos;s make something cool together.
-          </h1>
-        </section>
-      </Layout>
-    </>
+    <Layout>
+      <SEO title='anmpog.dev' location={location} />
+      <section
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          flex: 1,
+          justifyContent: 'center',
+          height: '100%',
+          margin: '0px',
+        }}
+      >
+        <h1
+          sx={{
+            fontSize: `clamp(1rem, 2.25vw, 2.5rem)`,
+            fontWeight: 400,
+            marginBottom: 4,
+            color: 'muted',
+          }}
+        >
+          hi, i&apos;m anthony!
+        </h1>
+        <h2
+          sx={{
+            fontSize: `clamp(2rem, 4vw, 3.75rem)`,
+          }}
+        >
+          i&apos;m a front-end web developer based in boulder, co.
+        </h2>
+        <h2
+          sx={{
+            fontSize: `clamp(1rem, 2.25vw, 2.5rem)`,
+            fontWeight: 400,
+            color: 'muted',
+          }}
+        >
+          i&apos;m excited about building things, helping others, and sharing
+          what i&apos;ve learned on my web-dev journey. let&apos;s make
+          something cool together.
+        </h2>
+      </section>
+    </Layout>
   )
 }
 
-export default BlogIndex
+export default Home

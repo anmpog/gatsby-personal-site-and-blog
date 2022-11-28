@@ -8,7 +8,9 @@ const theme = {
     text: '#0A0A0A',
     background: '#333333',
     primary: '#EE562F',
+    lightPrimary: '#F17455',
     secondary: '#F2AF29',
+    lightSecondary: '#F5BE51',
     muted: '#E0E0CE',
     gray: '#474747',
     darken: '#E0E0CE',
@@ -112,7 +114,7 @@ const theme = {
       },
       h4: {
         color: 'primary',
-        fontSize: 4,
+        fontSize: [2, null, 3],
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',

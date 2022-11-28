@@ -9,7 +9,7 @@ const MenuButton = ({ open, handleToggle }) => {
       sx={{
         width: '32px',
         height: '32px',
-        margin: '25px',
+        margin: '15px',
         padding: '0',
         border: 'none',
         display: ['flex', 'none'],

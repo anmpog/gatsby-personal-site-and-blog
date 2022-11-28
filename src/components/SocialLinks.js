@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react'
 import styled from '@emotion/styled'
 import { FaTwitter, FaGithub } from 'react-icons/fa'
 import { jsx } from 'theme-ui'
@@ -22,9 +21,10 @@ const SocialLinks = () => {
     <div
       sx={{
         display: 'flex',
+        height: '100%',
+        alignItems: 'center',
         justifyContent: ['center', null, 'flex-start'],
-        px: [1, 2, 3],
-        mt: [3, null, null, 5]
+        px: '50px',
       }}
     >
       <SocialLink

@@ -1,10 +1,21 @@
+html {
+  font-size: 16px;
+}
+
 /* Flexbox sticky footer */
 .content-wrapper {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  margin: 0 auto;
+  flex: 1;
 }
 
 .main-content {
-  flex: 1;
+  flex: 1 1 auto;
+}
+
+/* Stop transitions/animations from firing when window is resizing, see Utils for function */
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }

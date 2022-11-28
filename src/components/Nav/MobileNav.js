@@ -48,6 +48,7 @@ const MobileNav = ({ links }) => {
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
+        padding: '0',
       }}
     >
       <MenuButton open={open} handleToggle={toggleMenuOpen} />
@@ -55,6 +56,7 @@ const MobileNav = ({ links }) => {
       <Flex
         sx={{
           position: 'absolute',
+          display: ['flex', 'none'],
           top: 0,
           right: 0,
           bottom: 0,
@@ -62,9 +64,11 @@ const MobileNav = ({ links }) => {
           flexDirection: ['column', 'row'],
           backgroundColor: ['darken', 'transparent'],
           height: ['100vh', '100px'],
-          width: [open ? '75vw' : '0px', '100%'],
+          maxHeight: '100vh',
+          width: '75vw',
+          transform: open ? 'translateX(0vw)' : 'translateX(75vw)',
           transition: 'all 0.3s ease-out',
-          overflow: 'hidden',
+          visibility: open ? 'visible' : 'hidden',
           zIndex: 100,
         }}
       >

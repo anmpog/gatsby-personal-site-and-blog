@@ -1,9 +1,8 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Icon from '../components/shared/Icon'
-import { jsx, Box, Flex } from 'theme-ui'
+import { jsx, Flex } from 'theme-ui'
 import theme from '../gatsby-plugin-theme-ui'
 
 // Components
@@ -45,16 +44,16 @@ const StuffILikeListItem = ({ listTitle, listItems }) => {
         alignItems: ['flex-start'],
       }}
     >
-      <lh
+      <h4
         sx={{
-          flexBasis: '20%',
           fontWeight: 'bold',
           alignSelf: 'flex-start',
           mb: 2,
+          color: 'secondary',
         }}
       >
         {listTitle}:
-      </lh>
+      </h4>
       <ul
         sx={{
           flex: '1 1 80%',
@@ -95,7 +94,7 @@ const StuffIveLearnedListItem = ({
   return (
     <a
       href={courseUrl}
-      referrer='noreferrer'
+      referrer='noopener noreferrer'
       target='_blank'
       sx={{
         textDecoration: 'none',
@@ -104,6 +103,7 @@ const StuffIveLearnedListItem = ({
           transition: 'opacity ease-in 0.2s',
         },
       }}
+      rel='noreferrer'
     >
       <Flex
         sx={{
@@ -122,16 +122,6 @@ const StuffIveLearnedListItem = ({
   )
 }
 
-const CounterButton1 = () => {
-  let [count, setCount] = React.useState(0)
-  return (
-    <>
-      {count}
-      <button onClick={() => setCount}>Click to increment</button>
-    </>
-  )
-}
-
 const About = ({ location }) => {
   return (
     <Layout>
@@ -140,21 +130,24 @@ const About = ({ location }) => {
         variant='box.contentSection'
         sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff about me</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3, textTransform: 'lowercase' }}>
+          Stuff about me
+        </h3>
         <Flex sx={{ flexDirection: 'column', flexBasis: '75%' }}>
           <p>
             I'm Anthony! I'm a self-taught web developer who lives in Boulder,
             Colorado. I am primarily a JavaScript developer, and I gravitate
             towards front-end development (but I can break things in NodeJS as
-            well). I am also interested in – but not very experienced with –
-            design. Please feel free to contact me via social media if you want
-            to chat about anything!
+            well). I enjoy crafting aesthetically pleasing, functional user
+            interfaces and experiences. Please feel free to contact me via
+            social media if you want to chat about anything!
           </p>
 
           <p>
-            Outside coding, my interests include climbing, skiing, riding bikes,
-            cooking, making/consuming music, video games, watches, my cat Bean,
-            being unnecessarily verbose, and using the word "rad" unironically.
+            Outside of coding, my interests include rock climbing, skiing,
+            cycling, cooking, making/consuming music, video games, watches, my
+            cat Bean, being unnecessarily verbose, and using the word "rad"
+            unironically.
           </p>
         </Flex>
       </Flex>
@@ -163,7 +156,9 @@ const About = ({ location }) => {
         variant='box.contentSection'
         sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff I Use</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3, textTransform: 'lowercase' }}>
+          Stuff I Use
+        </h3>
         <ul
           sx={{
             display: 'flex',
@@ -188,7 +183,9 @@ const About = ({ location }) => {
         variant='box.contentSection'
         sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%', mr: 3 }}>Stuff I Like</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3, textTransform: 'lowercase' }}>
+          Stuff I Like
+        </h3>
         <Flex sx={{ justifyContent: 'flex-start', flexBasis: '75%' }}>
           <ul
             sx={{
@@ -201,7 +198,11 @@ const About = ({ location }) => {
           >
             <StuffILikeListItem
               listTitle='authors'
-              listItems={['Cormac McCarthy', 'Dostoevsky', 'Alexandre Dumas']}
+              listItems={[
+                'Cormac McCarthy',
+                'Fyodor Dostoevsky',
+                'Alexandre Dumas',
+              ]}
             />
             <StuffILikeListItem
               listTitle='artists'
@@ -216,16 +217,8 @@ const About = ({ location }) => {
               ]}
             />
             <StuffILikeListItem
-              listTitle='bikes'
-              listItems={['Pivot Cycles', 'Parlee']}
-            />
-            <StuffILikeListItem
               listTitle='games'
-              listItems={[
-                'League of Legends',
-                'Escape from Tarkov',
-                'Battlefield',
-              ]}
+              listItems={['League of Legends', 'Escape from Tarkov', 'Tetris']}
             />
           </ul>
         </Flex>
@@ -235,7 +228,9 @@ const About = ({ location }) => {
         variant='box.contentSection'
         sx={{ flexDirection: ['column', null, null, null, 'row'] }}
       >
-        <h3 sx={{ flexBasis: '25%' }}>Stuff I've Learned</h3>
+        <h3 sx={{ flexBasis: '25%', mr: 3, textTransform: 'lowercase' }}>
+          Stuff I've Learned
+        </h3>
         <ul sx={{ flexBasis: '75%', margin: 0, padding: 0 }}>
           <StuffIveLearnedListItem
             courseUrl='https://frontendmasters.com/courses/web-development-v2/'

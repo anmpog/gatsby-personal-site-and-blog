@@ -20,10 +20,6 @@ module.exports = {
         link: '/about',
       },
       {
-        name: 'projects',
-        link: '/projects',
-      },
-      {
         name: 'blog',
         link: '/blog',
       },
