@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/nightOwl'
 import { jsx } from 'theme-ui'
@@ -15,7 +14,7 @@ const CodeBlock = (props) => {
     }
       theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style }} sx={{ padding: 3, borderRadius: '0.3rem' }}>
+        <pre className={className} style={{ ...style }} sx={{ padding: 3, borderRadius: '1rem', overflowX: 'scroll' }}>
           <code>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
