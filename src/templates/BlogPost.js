@@ -1,14 +1,61 @@
 /** @jsx jsx */
-import React from 'react'
 import { graphql } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 import Link from '../components/shared/Link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { jsx, Box, Flex } from 'theme-ui'
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import CodeBlock from '../components/code-block'
+import { darken, lighten } from '@theme-ui/color'
+
+const BlogNavLink = ({ to, linkText, rel, postTitle }) => {
+  const formattedSlug = to ? `../${to}` : null
+  const trimmedTitle =
+    postTitle?.length > 120 ? `${postTitle.substring(0, 120)}...` : postTitle
+  return (
+    <GatsbyLink
+      to={formattedSlug}
+      rel={rel}
+      sx={{
+        color: 'muted',
+        flexBasis: '33.33%',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        listStyle: 'none',
+        borderWidth: '1px',
+        borderColor: 'muted',
+        borderStyle: 'solid',
+        borderRadius: '0.2rem',
+        padding: 2,
+        pointerEvents: !to ? 'none' : 'all',
+        backgroundColor: !to ? darken('background', 0.1) : 'background',
+        fontStyle: !to ? 'italic' : 'none',
+        '&:hover': {
+          background: lighten('background', 0.1),
+          cursor: !to ? 'not-allowed' : 'default',
+        },
+        '&:not([href])': {
+          opacity: '0.7',
+        },
+      }}
+    >
+      <span sx={{ fontSize: 2, mb: 3 }}>{linkText}</span>
+      <p
+        sx={{
+          fontSize: 1,
+          fontStyle: 'italic',
+          m: 0,
+          p: 2,
+        }}
+      >
+        {trimmedTitle}
+      </p>
+    </GatsbyLink>
+  )
+}
 
 const components = {
   pre: CodeBlock,
@@ -18,7 +65,6 @@ const components = {
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
   const { previous, next } = pageContext
-
   return (
     <Layout>
       <SEO
@@ -27,99 +73,49 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         location={location}
       />
       <MDXProvider components={components}>
-        <Box sx={{ maxWidth: '950px', margin: '0 auto' }}>
-          <article>
-            <Box
+        <article>
+          <Box
+            sx={{
+              textAlign: 'center',
+              mb: 5,
+            }}
+          >
+            <h2>{post.frontmatter.title}</h2>
+            <time
+              dateTime={post.frontmatter.date}
               sx={{
-                textAlign: 'center',
-                mb: 5,
+                color: 'primary',
+                fontSize: 3,
               }}
             >
-              <h2>{post.frontmatter.title}</h2>
-              <time
-                dateTime={post.frontmatter.date}
-                sx={{
-                  color: 'primary',
-                  fontSize: 3,
-                }}
-              >
-                {post.frontmatter.date}
-              </time>
-              <hr />
-            </Box>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </article>
-          <footer>
-            <nav>
-              <Flex
-                as='ul'
-                sx={{
-                  margin: '100px 0 45px 0',
-                  flexDirection: ['column', null, 'row'],
-                  py: 0,
-                }}
-              >
-                <li
-                  sx={{
-                    flexBasis: '33.33%',
-                    alignItems: 'center',
-                    display: 'flex',
-                    justifyContent: ['center', null, 'flex-start'],
-                    py: 4,
-                  }}
-                >
-                  {previous ? (
-                    <Link to={`../${previous.frontmatter.slug}`} rel='prev'>
-                      ← Last Post
-                    </Link>
-                  ) : (
-                    <p sx={{ margin: '0px', fontStyle: 'italic' }}>
-                      You're on the first post.
-                    </p>
-                  )}
-                </li>
-                <li
-                  sx={{
-                    flexBasis: '33.33%',
-                    alignItems: 'center',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    py: 4,
-                  }}
-                >
-                  <Link to='/blog' activeClassName={null}>
-                    Blog Home
-                  </Link>
-                </li>
-                <li
-                  sx={{
-                    flexBasis: '33.33%',
-                    alignItems: 'center',
-                    display: 'flex',
-                    justifyContent: ['center', null, 'flex-end'],
-                    py: 4,
-                  }}
-                >
-                  {next ? (
-                    <Link to={`../${next.frontmatter.slug}`} rel='next'>
-                      Next Post →
-                    </Link>
-                  ) : (
-                    <p
-                      sx={{
-                        margin: '0px',
-                        fontStyle: 'italic',
-                      }}
-                    >
-                      You're on the last post.
-                    </p>
-                  )}
-                </li>
-              </Flex>
-            </nav>
-            <Bio />
-          </footer>
-        </Box>
+              {post.frontmatter.date}
+            </time>
+            <hr />
+          </Box>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </article>
+        <footer sx={{ marginTop: 6 }}>
+          <Flex
+            as='nav'
+            sx={{ gap: [2, null, 3], flexDirection: ['column', null, 'row'] }}
+          >
+            <BlogNavLink
+              to={previous?.frontmatter?.slug}
+              linkText={'← Last Post'}
+              postTitle={
+                previous?.frontmatter?.title || "You're on the first post!"
+              }
+              rel='prev'
+            />
+            <BlogNavLink to='../blog' linkText={'Blog Home'} />
+            <BlogNavLink
+              to={next?.frontmatter?.slug}
+              linkText={'Next Post →'}
+              postTitle={next?.frontmatter?.title || "You're on the last post!"}
+              rel='next'
+            />
+          </Flex>
+        </footer>
       </MDXProvider>
     </Layout>
   )
@@ -136,7 +132,7 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 180)
+      excerpt(pruneLength: 90)
       body
       frontmatter {
         title
