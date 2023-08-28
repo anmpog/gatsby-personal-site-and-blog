@@ -6424,10 +6424,10 @@ devcert@^1.2.0:
     tmp "^0.0.33"
     tslib "^1.10.0"
 
-devicon@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/devicon/-/devicon-2.14.0.tgz#d54d7baad383ecd569318893b9f24081cfab5964"
-  integrity sha512-kfQtBO8kuFInbdAm4tPjrS5Jr7W1fmE1G6sUaEoftucMJYt5M0qps/wZ85GEPhh4A+UKxDUSSNmPmqvYrG0oVA==
+devicon@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/devicon/-/devicon-2.15.1.tgz#148b791886f3d085f0f0b9aba72da71b2070dc56"
+  integrity sha512-iyapbDVaq1PgMSMZ4IekgjH230aSUU4kHmZ142lQ2TJ+9HB4P4V78eNDkyaQEEoi0KJhxIGPcTSFqxHaZ4OMyw==
 
 dicer@0.2.5:
   version "0.2.5"

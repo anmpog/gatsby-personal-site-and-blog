@@ -14,7 +14,7 @@
     "@mdx-js/mdx": "v1",
     "@mdx-js/react": "v1",
     "@theme-ui/color": "^0.14.5",
-    "devicon": "^2.14.0",
+    "devicon": "^2.15.1",
     "gatsby": "^4.16.0",
     "gatsby-plugin-emotion": "^7.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
