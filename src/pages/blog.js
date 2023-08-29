@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import usePosts from '../hooks/use-posts'
+import usePosts from '../hooks/usePosts'
 import PostPreview from '../components/PostPreview'
 import { Box } from 'theme-ui'
 
