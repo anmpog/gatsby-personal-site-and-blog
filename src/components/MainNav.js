@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
-import Link from './shared/Link'
 import { jsx, Flex } from 'theme-ui'
 import MobileNav from './Nav/MobileNav'
+import InternalLink from './shared/InternalLink'
 
-const MainNav = ({ ...props }) => {
+const MainNav = () => {
   const navLinkData = useStaticQuery(graphql`
     query navLinksQuery {
       site {
@@ -37,24 +37,25 @@ const MainNav = ({ ...props }) => {
         sx={{
           display: ['none', 'grid'],
           gridAutoFlow: 'row',
-          gridTemplateColumns: 'repeat(4, auto)',
+          gridTemplateColumns: `repeat(${menuLinks.length}, 1fr)`,
           gap: 3,
+          margin: 0,
+          padding: 0,
+          listStyle: 'none',
+          alignItems: 'center',
+          mt: `-${3}`,
         }}
       >
         {menuLinks.map(link => {
           return (
-            <li
-              key={link.name}
-              sx={{
-                listStyle: 'none',
-                fontSize: '20px',
-                marginRight: '2%',
-                '&:last-of-type': {
-                  marginRight: 0,
-                },
-              }}
-            >
-              <Link to={link.link}>{link.name}</Link>
+            <li key={link.name}>
+              <InternalLink
+                to={link.link}
+                sx={{ fontSize: 2 }}
+                isNavigation={true}
+              >
+                {link.name}
+              </InternalLink>
             </li>
           )
         })}

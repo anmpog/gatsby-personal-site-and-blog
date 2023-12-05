@@ -1,47 +1,64 @@
 /** @jsx jsx */
-import styled from '@emotion/styled'
-import { FaTwitter, FaGithub } from 'react-icons/fa'
-import { jsx } from 'theme-ui'
+import { Flex, jsx } from 'theme-ui'
+import { useState } from 'react'
+import theme from '../gatsby-plugin-theme-ui'
+import Icon from './shared/Icon'
+import { darken } from '@theme-ui/color'
+import ExternalLink from './shared/ExternalLink'
 
-const SocialLink = styled.a`
-  margin-right: 2rem;
+const SocialLink = ({ icon, to, color = 'muted' }) => {
+  const [isHovered, setIsHovered] = useState(false)
+  const curriedTheme = darken(theme.colors[color], 0.5)
+  const darkenedColor = curriedTheme(theme)
+  const iconColor = isHovered ? darkenedColor : theme.colors[color]
 
-  &:last-of-type {
-    margin-right: 0;
+  const handleMouseEnter = () => {
+    setIsHovered(true)
   }
 
-  &:hover {
-    opacity: 0.95;
-    transition: opacity 0.3s;
+  const handleMouseLeave = () => {
+    setIsHovered(false)
   }
-`
 
-const SocialLinks = () => {
   return (
-    <div
+    <ExternalLink to={to}>
+      <Icon
+        icon={icon}
+        width={theme.space[4]}
+        color={iconColor}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
+    </ExternalLink>
+  )
+}
+
+const SocialLinks = ({ color, ...props }) => {
+  return (
+    <Flex
       sx={{
         display: 'flex',
-        height: '100%',
+        gap: 5,
         alignItems: 'center',
-        justifyContent: ['center', null, 'flex-start'],
-        px: '50px',
       }}
+      {...props}
     >
       <SocialLink
-        href='https://twitter.com/anmpog'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <FaTwitter color='#f5f5f6' size={30} />
-      </SocialLink>
+        to='https://github.com/anmpog'
+        icon={'github'}
+        color={color}
+      />
       <SocialLink
-        href='https://github.com/anmpog'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <FaGithub color='#f5f5f6' size={30} />
-      </SocialLink>
-    </div>
+        to='https://gitlab.com/anmpog'
+        icon={'gitlab'}
+        color={color}
+      />
+      <SocialLink
+        to='https://linkedin.com/in/anthony-pogliano-4644b5280'
+        icon={'linkedin'}
+        color={color}
+      />
+    </Flex>
   )
 }
 

@@ -3,9 +3,10 @@ import { css, Global } from '@emotion/react'
 import { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { Box, Flex, jsx } from 'theme-ui'
-import { useOnClickOutside } from '../../hooks/use-on-click-outside'
-import Link from '../shared/Link'
+import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import MenuButton from './MenuButton'
+import SocialLinks from '../SocialLinks'
+import InternalLink from '../shared/InternalLink'
 
 export const pinBody = css`
   body {
@@ -83,21 +84,24 @@ const MobileNav = ({ links }) => {
           }}
         >
           {links.map(link => (
-            <Link
+            <InternalLink
               to={link.link}
               key={link.name}
-              styles={{
+              isNavigation={true}
+              sx={{
                 textAlign: 'center',
-                marginBottom: 3,
+                fontSize: 3,
+                marginBottom: 6,
                 '&:last-of-type': {
                   marginBottom: '0px',
                 },
               }}
             >
               {link.name}
-            </Link>
+            </InternalLink>
           ))}
         </ul>
+        <SocialLinks color={'text'} sx={{ marginBottom: 5 }} />
       </Flex>
     </Box>
   )

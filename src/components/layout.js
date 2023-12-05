@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import SocialLinks from './SocialLinks'
-import MainNav from './MainNav'
 import { jsx, Container } from 'theme-ui'
+import MainNav from './MainNav'
+import theme from '../gatsby-plugin-theme-ui'
 
-const Layout = ({ title, children }) => {
+const Layout = ({ children }) => {
   return (
     <Container
       sx={{
@@ -18,7 +18,7 @@ const Layout = ({ title, children }) => {
           display: 'flex',
           width: '100%',
           margin: '0 auto',
-          height: ['75px', '100px'],
+          height: [theme.space[8], theme.space[9]],
           padding: ['0px', '0 50px'],
         }}
       >
@@ -37,9 +37,6 @@ const Layout = ({ title, children }) => {
           {children}
         </main>
       </Container>
-      <footer sx={{ height: '70px', marginTop: '3rem' }}>
-        <SocialLinks />
-      </footer>
     </Container>
   )
 }

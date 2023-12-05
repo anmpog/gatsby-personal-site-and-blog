@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import {
   MongoIcon,
   HTMLIcon,
@@ -8,6 +9,10 @@ import {
   CSSIcon,
   GatsbyIcon,
   FirefoxIcon,
+  GithubIcon,
+  GitlabIcon,
+  VSCodeIcon,
+  LinkedInIcon,
 } from '../../assets/dev-icons'
 
 const Icon = ({ icon, color, ...props }) => {
@@ -28,8 +33,16 @@ const Icon = ({ icon, color, ...props }) => {
       return <GatsbyIcon color={color} {...props} />
     case 'firefox':
       return <FirefoxIcon color={color} {...props} />
-    default: 
-    return null
+    case 'github':
+      return <GithubIcon color={color} {...props} />
+    case 'gitlab':
+      return <GitlabIcon color={color} {...props} />
+    case 'vscode':
+      return <VSCodeIcon color={color} {...props} />
+    case 'linkedin':
+      return <LinkedInIcon color={color} {...props} />
+    default:
+      return null
   }
 }
 

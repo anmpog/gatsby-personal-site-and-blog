@@ -1,40 +1,26 @@
 /** @jsx jsx */
-import React from 'react'
-import Link from './shared/Link'
-import { jsx, Box } from 'theme-ui'
+import { jsx } from 'theme-ui'
+import Card from './shared/Card'
+import InternalLink from './shared/InternalLink'
 
 const PostPreview = ({ post }) => {
   const { slug, title, date, description } = post
   return (
-    <Link to={`/blog/${slug}`} sx={{ '&:hover': { opacity: '.95' } }}>
-      <Box
-        sx={{
-          backgroundColor: 'muted',
-          padding: 3,
-          borderRadius: '.2rem',
-          mx: 'auto',
-          mb: [2, 3, null, 4]
-        }}
-      >
+    <InternalLink to={`/blog/${slug}`}>
+      <Card hoverEffect={true}>
         <article key={slug}>
-          <header sx={{ marginBottom: 4 }}>
-            <h3>{title}</h3>
-            <time
-              dateTime={date}
-              sx={{ color: 'background', fontWeight: 'bold' }}
-            >
-              {date}
-            </time>
+          <header sx={{ marginBottom: 2 }}>
+            <h5 sx={{ color: 'muted' }}>{title}</h5>
+            <time dateTime={date}>{date}</time>
           </header>
           <p
-            sx={{ color: 'background' }}
             dangerouslySetInnerHTML={{
               __html: description,
             }}
           />
         </article>
-      </Box>
-    </Link>
+      </Card>
+    </InternalLink>
   )
 }
 

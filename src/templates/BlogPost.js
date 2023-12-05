@@ -1,14 +1,16 @@
 /** @jsx jsx */
 import { graphql } from 'gatsby'
 import { Link as GatsbyLink } from 'gatsby'
-import Link from '../components/shared/Link'
+import ExternalLink from '../components/shared/ExternalLink'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { jsx, Box, Flex } from 'theme-ui'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import CodeBlock from '../components/code-block'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import CodeBlock from '../components/CodeBlock'
 import { darken, lighten } from '@theme-ui/color'
+import ContentSection from '../components/ContentSection'
+import Bio from '../components/Bio'
 
 const BlogNavLink = ({ to, linkText, rel, postTitle }) => {
   const formattedSlug = to ? `../${to}` : null
@@ -59,7 +61,7 @@ const BlogNavLink = ({ to, linkText, rel, postTitle }) => {
 
 const components = {
   pre: CodeBlock,
-  Link,
+  ExternalLink,
 }
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -73,28 +75,32 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         location={location}
       />
       <MDXProvider components={components}>
-        <article>
-          <Box
-            sx={{
-              textAlign: 'center',
-              mb: 5,
-            }}
-          >
-            <h2>{post.frontmatter.title}</h2>
-            <time
-              dateTime={post.frontmatter.date}
-              sx={{
-                color: 'primary',
-                fontSize: 3,
-              }}
-            >
-              {post.frontmatter.date}
-            </time>
-            <hr />
-          </Box>
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </article>
-        <footer sx={{ marginTop: 6 }}>
+        <ContentSection
+          leftRail={<Bio />}
+          rightRail={
+            <article sx={{ variant: 'box.card.primary' }}>
+              <Box
+                sx={{
+                  textAlign: 'center',
+                  mb: 5,
+                }}
+              >
+                <h3>{post.frontmatter.title}</h3>
+                <time dateTime={post.frontmatter.date}>
+                  {post.frontmatter.date}
+                </time>
+                <hr />
+              </Box>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </article>
+          }
+        />
+        <footer
+          sx={{
+            mb: [3, null, 5],
+            marginTop: 'auto',
+          }}
+        >
           <Flex
             as='nav'
             sx={{ gap: [2, null, 3], flexDirection: ['column', null, 'row'] }}
