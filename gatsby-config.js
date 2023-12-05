@@ -3,21 +3,15 @@ module.exports = {
     title: `anmpog.dev`,
     author: {
       name: `Anthony Pogliano`,
-      summary: `– a front-end web developer based in Boulder, CO. ⛰`,
+      summary: `– a web developer based in Boulder, CO. ⛰`,
     },
     description: `The personal site and blog of Anthony Pogliano.`,
     siteUrl: `https://anmpog.dev`,
-    social: {
-      twitter: `anmpog`,
-    },
+    social: {},
     menuLinks: [
       {
         name: 'home',
         link: '/',
-      },
-      {
-        name: 'about',
-        link: '/about',
       },
       {
         name: 'blog',
@@ -37,6 +31,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `images`,
       },
     },
     {
