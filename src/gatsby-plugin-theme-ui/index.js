@@ -6,14 +6,15 @@ const theme = {
   borderWidths: [1, 4],
   colors: {
     text: '#0A0A0A',
-    background: '#333333',
+    background: '#23242b',
     primary: '#EE562F',
     lightPrimary: '#F17455',
     secondary: '#F2AF29',
     lightSecondary: '#F5BE51',
     muted: '#E0E0CE',
-    gray: '#474747',
+    gray: '#3D3D3D',
     darken: '#E0E0CE',
+    darkCard: '#424349',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -23,7 +24,7 @@ const theme = {
   fontSizes: [
     '0.75rem',
     '1rem',
-    '1.25rem',
+    '1.125rem',
     '1.5rem',
     '2.125rem',
     '3rem',
@@ -32,14 +33,21 @@ const theme = {
   ],
   fontWeights: {
     body: 400,
-    heading: 900,
+    heading: 700,
     bold: 700,
   },
   lineHeights: {
-    heading: 1.25,
+    heading: 1.2,
     body: 1.5,
   },
-  radii: [],
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      fontSize: 2,
+      color: 'red',
+    },
+  },
+  radii: ['0.5rem'],
   shadows: [
     '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
     '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
@@ -49,21 +57,39 @@ const theme = {
   ],
   sizes: {
     container: '1200px',
+    small: '128px',
+    medium: '256px',
+    mediumLarge: '384px',
+    large: '512px',
   },
-  space: [0, 4, 8, 16, 24, 32, 40],
+  space: [0, 4, 8, 16, 24, 32, 40, 48, 64, 96, 128, 256, 512],
   zIndices: [],
   breakpoints: ['520px', '768px', '800px', '1000px', '1120px'],
+  badges: {
+    primary: {
+      color: 'text',
+      backgroundColor: 'secondary',
+      fontSize: 1,
+      px: 3,
+      py: 1,
+      borderRadius: '1rem',
+    },
+  },
   layout: {},
   styles: {
     root: {
-      fontSize: '20px',
+      fontSize: '16px',
       fontFamily: 'body',
       lineHeight: 'body',
       p: {
+        fontSize: 1,
         color: 'darken',
-        lineHeight: [1.25, 1.3, 'body'],
+        lineHeight: 'body',
         marginTop: 0,
-        marginBottom: 4,
+        marginBottom: 0,
+        '&:not(:last-of-type)': {
+          marginBottom: [3, null, 4],
+        },
         code: {
           backgroundColor: 'darken',
           color: 'text',
@@ -77,9 +103,9 @@ const theme = {
         },
       },
       h1: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [4, 5, 6, null, 7],
-        fontWeight: '900',
+        fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
         marginTop: 0,
@@ -89,7 +115,7 @@ const theme = {
         },
       },
       h2: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [3, 4, 5, null, 6],
         fontWeight: 'heading',
         lineHeight: 'heading',
@@ -101,7 +127,7 @@ const theme = {
         },
       },
       h3: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [3, null, 4],
         fontWeight: 'heading',
         lineHeight: 'heading',
@@ -113,7 +139,7 @@ const theme = {
         },
       },
       h4: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [2, null, 3],
         fontWeight: 'heading',
         lineHeight: 'heading',
@@ -125,7 +151,7 @@ const theme = {
         },
       },
       h5: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [2, 3],
         fontWeight: 'heading',
         lineHeight: 'heading',
@@ -137,45 +163,27 @@ const theme = {
         },
       },
       h6: {
-        color: 'primary',
+        color: 'darken',
         fontSize: [1, 2],
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
         marginTop: 0,
-        marginBottom: 3,
+        marginBottom: 2,
       },
       ul: {
         color: 'text',
-        padding: 0,
       },
       li: {
-        color: 'primary',
-        listStyle: 'square',
-        display: 'flex',
-        // justifyContent: 'center',
-        alignItems: 'center',
+        color: 'darken',
+        fontSize: [1, null, 2],
       },
       a: {
-        color: 'muted',
         textDecoration: 'none',
-        // '&::before': {
-        //   content: '"\\00B7"',
-        //   marginRight: '3px',
-        //   visibility: 'hidden',
-        // },
-        '&:hover': {
-          color: darken('muted', 0.1),
-        },
-        '&.active': {
-          color: 'primary',
-          '&:hover': {
-            color: darken('primary', 0.1),
-          },
-          '&::before': {
-            visibility: 'visible',
-          },
-        },
+      },
+      time: {
+        variant: 'styles.root.p',
+        fontStyle: 'italic',
       },
     },
   },
@@ -204,7 +212,6 @@ const theme = {
   ol: {
     color: 'text',
   },
-
   blockquote: {
     borderLeftColor: 'primary',
     borderLeftStyle: 0,
@@ -216,9 +223,22 @@ const theme = {
     },
   },
   box: {
-    contentSection: {
-      marginBottom: 6,
-      padding: [1, 2, 3],
+    card: {
+      primary: {
+        padding: ['24px 12px', null, 4],
+        backgroundColor: 'darkCard',
+        boxShadow: 2,
+        borderRadius: '0.5rem',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: 'gray',
+      },
+      transparent: {
+        variant: 'box.card.primary',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        border: '1 px solid transparent',
+      },
     },
   },
   buttons: {
@@ -238,15 +258,12 @@ const theme = {
     icon: {},
     menu: {},
   },
-  text: {
-    text: {},
-    heading: {},
-  },
   links: {
     internalLink: {
-      border: '2px solid red',
-      color: 'muted',
-      textDecoration: 'none',
+      color: ['text', 'muted'],
+    },
+    navLink: {
+      variant: 'links.internalLink',
       '&::before': {
         content: '"\\00B7"',
         marginRight: '3px',
@@ -254,6 +271,7 @@ const theme = {
       },
       '&.active': {
         color: 'primary',
+        textDecoration: 'none',
         '&::before': {
           visibility: 'visible',
         },
