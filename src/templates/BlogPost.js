@@ -1,61 +1,60 @@
 /** @jsx jsx */
 import { graphql } from 'gatsby'
-import { Link as GatsbyLink } from 'gatsby'
 import ExternalLink from '../components/shared/ExternalLink'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
-import { jsx, Box, Flex } from 'theme-ui'
+import { jsx, Box, Grid } from 'theme-ui'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import CodeBlock from '../components/CodeBlock'
-import { darken, lighten } from '@theme-ui/color'
+import { darken } from '@theme-ui/color'
 import ContentSection from '../components/ContentSection'
 import Bio from '../components/Bio'
+import InternalLink from '../components/shared/InternalLink'
 
 const BlogNavLink = ({ to, linkText, rel, postTitle }) => {
   const formattedSlug = to ? `../${to}` : null
-  const trimmedTitle =
-    postTitle?.length > 120 ? `${postTitle.substring(0, 120)}...` : postTitle
   return (
-    <GatsbyLink
+    <InternalLink
       to={formattedSlug}
       rel={rel}
       sx={{
-        color: 'muted',
-        flexBasis: '33.33%',
-        alignItems: 'center',
+        variant: 'box.card.transparent',
         display: 'flex',
         flexDirection: 'column',
-        listStyle: 'none',
+        alignItems: 'center',
         borderWidth: '1px',
         borderColor: 'muted',
-        borderStyle: 'solid',
-        borderRadius: '0.2rem',
         padding: 2,
         pointerEvents: !to ? 'none' : 'all',
         backgroundColor: !to ? darken('background', 0.1) : 'background',
         fontStyle: !to ? 'italic' : 'none',
         '&:hover': {
-          background: lighten('background', 0.1),
-          cursor: !to ? 'not-allowed' : 'default',
+          backgroundColor: darken('darkCard', 0.1),
+          cursor: !to ? 'not-allowed' : 'pointer',
+          transition: 'background-color 0.3s',
         },
         '&:not([href])': {
           opacity: '0.7',
         },
       }}
     >
-      <span sx={{ fontSize: 2, mb: 3 }}>{linkText}</span>
+      <span sx={{ fontSize: 2, mb: 3, color: 'darken' }}>{linkText}</span>
       <p
         sx={{
           fontSize: 1,
           fontStyle: 'italic',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          maxWidth: '100%',
           m: 0,
           p: 2,
         }}
       >
-        {trimmedTitle}
+        {postTitle}
       </p>
-    </GatsbyLink>
+    </InternalLink>
   )
 }
 
@@ -101,9 +100,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginTop: 'auto',
           }}
         >
-          <Flex
+          <Grid
             as='nav'
-            sx={{ gap: [2, null, 3], flexDirection: ['column', null, 'row'] }}
+            sx={{
+              gridTemplateColumns: [
+                'repeat(1, minmax(0, 1fr))',
+                null,
+                'repeat(3, minmax(0, 1fr))',
+              ],
+            }}
           >
             <BlogNavLink
               to={previous?.frontmatter?.slug}
@@ -120,7 +125,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               postTitle={next?.frontmatter?.title || "You're on the last post!"}
               rel='next'
             />
-          </Flex>
+          </Grid>
         </footer>
       </MDXProvider>
     </Layout>
