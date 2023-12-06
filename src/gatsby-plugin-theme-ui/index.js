@@ -237,7 +237,6 @@ const theme = {
         variant: 'box.card.primary',
         backgroundColor: 'transparent',
         boxShadow: 'none',
-        border: '1 px solid transparent',
       },
     },
   },
