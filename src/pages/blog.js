@@ -1,8 +1,10 @@
 import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import usePosts from '../hooks/use-posts'
-import PostPreview from '../components/post-preview'
+import Layout from '../components/Layout'
+import SEO from '../components/SEO'
+import usePosts from '../hooks/usePosts'
+import PostPreview from '../components/PostPreview'
+import ContentSection from '../components/ContentSection'
+import Bio from '../components/Bio'
 
 const Blog = ({ location }) => {
   const posts = usePosts()
@@ -10,9 +12,17 @@ const Blog = ({ location }) => {
   return (
     <Layout>
       <SEO title='Blog Posts' location={location} />
-      {posts.map(post => (
-        <PostPreview key={post.slug} post={post} />
-      ))}
+      <ContentSection
+        leftRail={<Bio />}
+        rightRailContainerStyles={{ gap: [3, null, 4] }}
+        rightRail={
+          <React.Fragment>
+            {posts.map(post => (
+              <PostPreview key={post.slug} post={post} />
+            ))}
+          </React.Fragment>
+        }
+      />
     </Layout>
   )
 }

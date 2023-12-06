@@ -1,24 +1,43 @@
-import React from 'react'
-import NavLinks from './nav-links'
-import SocialLinks from '../components/social-links'
-import MobileNav from './mobile-nav'
-import DesktopNav from './desktop-nav'
+/** @jsx jsx */
+import { jsx, Container } from 'theme-ui'
+import MainNav from './MainNav'
+import theme from '../gatsby-plugin-theme-ui'
 
-const Layout = ({ title, children }) => {
+const Layout = ({ children }) => {
   return (
-    <div className='layout'>
-      <header>
-        {/* Passing component in like this is not ideal, need to refactor to use render-prop pattern */}
-        <MobileNav navLinks={<NavLinks />} />
-        <DesktopNav navLinks={<NavLinks />} />
+    <Container
+      sx={{
+        minHeight: '100vh',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <header
+        sx={{
+          display: 'flex',
+          width: '100%',
+          margin: '0 auto',
+          height: [theme.space[8], theme.space[9]],
+          padding: ['0px', '0 50px'],
+        }}
+      >
+        <MainNav />
       </header>
-      <main>
-        {children}
-      </main>
-      <footer>
-        <SocialLinks />
-      </footer>
-    </div>
+      <Container className='content-wrapper'>
+        <main
+          className='main-content'
+          sx={{
+            display: 'flex',
+            flex: '1 1 auto',
+            px: [2, '50px'],
+            flexDirection: 'column',
+          }}
+        >
+          {children}
+        </main>
+      </Container>
+    </Container>
   )
 }
 

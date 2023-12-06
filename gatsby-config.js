@@ -3,26 +3,41 @@ module.exports = {
     title: `anmpog.dev`,
     author: {
       name: `Anthony Pogliano`,
-      summary: `– a front-end web developer based in Boulder, CO. ⛰`,
+      summary: `– a web developer based in Boulder, CO. ⛰`,
     },
     description: `The personal site and blog of Anthony Pogliano.`,
     siteUrl: `https://anmpog.dev`,
-    social: {
-      twitter: `anmpog`,
-    },
+    social: {},
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/',
+      },
+      {
+        name: 'blog',
+        link: '/blog',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-preload-fonts`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `images`,
       },
     },
     {
@@ -32,12 +47,6 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -51,12 +60,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `anmpog.dev`,
@@ -65,8 +68,12 @@ module.exports = {
         icon: `src/static/mountain-favicon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Merriweather\:400,700,900`],
+        display: `swap`,
+      },
+    },
   ],
 }

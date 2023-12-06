@@ -1,11 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const { EDEADLK } = require("constants")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const BlogPost = path.resolve(`./src/templates/BlogPost.js`)
   const result = await graphql(
     `
       {
@@ -57,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach((post, index) => {
     createPage({
       path: `/blog/${post.node.frontmatter.slug || post.node.fields.slug}`,
-      component: blogPost,
+      component: BlogPost,
       context: {
         slug: post.node.fields.slug,
         previous: post.previous,
