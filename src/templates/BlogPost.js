@@ -7,13 +7,13 @@ import { MDXProvider } from '@mdx-js/react'
 import { jsx, Box } from 'theme-ui'
 import SEO from '../components/SEO'
 import CodeBlock from '../components/CodeBlock'
-import CodeSandbox from '../components/CodeSandbox'
+// import CodeSandbox from '../components/CodeSandbox'
 import BlogNavigation from '../components/Blog/BlogNavigation'
 
 const components = {
   pre: CodeBlock,
   ExternalLink,
-  CodeSandbox,
+  // CodeSandbox,
 }
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
