@@ -32,8 +32,8 @@ const ResumeExperienceSection = ({
         <p>{jobDescription}</p>
         {skills && (
           <ul sx={{ p: 0, display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-            {skills.map(skill => (
-              <SkillBadge>{skill}</SkillBadge>
+            {skills.map((skill, index) => (
+              <SkillBadge key={index}>{skill}</SkillBadge>
             ))}
           </ul>
         )}
