@@ -57,7 +57,7 @@ const MobileNav = ({ links }) => {
       <Flex
         sx={{
           position: 'absolute',
-          display: ['flex', 'none'],
+          display: ['flex', null, 'none'],
           top: 0,
           right: 0,
           bottom: 0,

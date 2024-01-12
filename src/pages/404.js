@@ -1,17 +1,13 @@
-import React from 'react'
+import { Fragment } from 'react'
 import { graphql } from 'gatsby'
-
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
 const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Fragment>
       <SEO title='404: Not Found' location={location} />
       <h2>The page you were looking for does not exist... yet.</h2>
-    </Layout>
+    </Fragment>
   )
 }
 

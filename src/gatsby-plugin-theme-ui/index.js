@@ -40,13 +40,13 @@ const theme = {
     heading: 1.2,
     body: 1.5,
   },
-  text: {
-    heading: {
-      fontFamily: 'heading',
-      fontSize: 2,
-      color: 'red',
-    },
-  },
+  // text: {
+  //   heading: {
+  //     fontFamily: 'heading',
+  //     fontSize: 2,
+  //     color: 'red',
+  //   },
+  // },
   radii: ['0.5rem'],
   shadows: [
     '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
@@ -56,7 +56,7 @@ const theme = {
     '0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)',
   ],
   sizes: {
-    container: '1200px',
+    container: '1616px',
     small: '128px',
     medium: '256px',
     mediumLarge: '384px',
@@ -64,7 +64,7 @@ const theme = {
   },
   space: [0, 4, 8, 16, 24, 32, 40, 48, 64, 96, 128, 256, 512],
   zIndices: [],
-  breakpoints: ['520px', '768px', '800px', '1000px', '1120px'],
+  breakpoints: ['520px', '760px', '800px', '1200px', '1500'],
   badges: {
     primary: {
       color: 'text',
@@ -91,9 +91,11 @@ const theme = {
           marginBottom: [3, null, 4],
         },
         code: {
-          backgroundColor: 'darken',
-          color: 'text',
-          padding: 1,
+          backgroundColor: 'rgb(1, 22, 39)',
+          color: 'rgb(128, 203, 196)',
+          padding: '2px 6px',
+          borderRadius: '4px',
+          whiteSpace: 'wrap',
         },
       },
       div: {
@@ -176,7 +178,8 @@ const theme = {
       },
       li: {
         color: 'darken',
-        fontSize: [1, null, 2],
+        marginBottom: 0,
+        fontSize: 1,
       },
       a: {
         textDecoration: 'none',
@@ -204,9 +207,11 @@ const theme = {
     overflow: 'auto',
     padding: 3,
     code: {
-      backgroundColor: 'darken',
-      color: 'text',
-      lineHeight: 'body',
+      backgroundColor: 'rgb(1, 22, 39)',
+      color: 'rgb(128, 203, 196)',
+      padding: '2px 6px',
+      borderRadius: '4px',
+      whiteSpace: 'wrap',
     },
   },
   ol: {
@@ -225,7 +230,7 @@ const theme = {
   box: {
     card: {
       primary: {
-        padding: ['24px 12px', null, 4],
+        padding: [3, null, 4],
         backgroundColor: 'darkCard',
         boxShadow: 2,
         borderRadius: '0.5rem',

@@ -40,7 +40,7 @@ const MainNav = () => {
           gridTemplateColumns: `repeat(${menuLinks.length}, 1fr)`,
           gap: 3,
           margin: 0,
-          padding: 0,
+          px: 0,
           listStyle: 'none',
           alignItems: 'center',
           mt: `-${3}`,

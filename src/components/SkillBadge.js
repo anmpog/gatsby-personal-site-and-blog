@@ -1,8 +1,12 @@
 /** @jsx jsx */
 import { jsx, Badge } from 'theme-ui'
 
-const SkillBadge = ({ children }) => {
-  return <Badge variant='primary'>{children}</Badge>
+const SkillBadge = ({ children, props }) => {
+  return (
+    <Badge variant='primary' {...props}>
+      {children}
+    </Badge>
+  )
 }
 
 export default SkillBadge

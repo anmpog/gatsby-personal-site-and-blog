@@ -21,11 +21,11 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-emotion`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -73,6 +73,12 @@ module.exports = {
       options: {
         fonts: [`Merriweather\:400,700,900`],
         display: `swap`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`${__dirname}/src/components/Layout`),
       },
     },
   ],

@@ -1,39 +1,19 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui'
 
-const ContentSection = ({
-  leftRail,
-  rightRail,
-  leftRailContainerStyles,
-  rightRailContainerStyles,
-}) => {
+const ContentSection = ({ containerStyles, children }) => {
   return (
     <Flex
       sx={{
         mb: [5, null, 9],
-        flexDirection: ['column', null, 'row'],
+        flexDirection: 'column',
         gap: [3, null, 4],
+        justifyContent: 'flex-start',
+        width: '100%',
+        ...containerStyles,
       }}
     >
-      <Flex
-        sx={{
-          flexBasis: '40%',
-          flexDirection: 'column',
-          ...leftRailContainerStyles,
-        }}
-      >
-        {leftRail}
-      </Flex>
-      <Flex
-        sx={{
-          flexBasis: '60%',
-          flexDirection: 'column',
-          gap: [3, null, 4],
-          ...rightRailContainerStyles,
-        }}
-      >
-        {rightRail}
-      </Flex>
+      {children}
     </Flex>
   )
 }

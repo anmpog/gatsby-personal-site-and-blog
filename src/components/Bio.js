@@ -1,23 +1,26 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { jsx, Flex } from 'theme-ui'
+import { jsx, Flex, Box } from 'theme-ui'
 import theme from '../gatsby-plugin-theme-ui'
 import SocialLinks from './SocialLinks'
 
-const Bio = () => {
+const Bio = ({ containerStyles }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpeg/" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(
+            placeholder: BLURRED
+            formats: WEBP
+            layout: CONSTRAINED
+          )
         }
       }
       site {
         siteMetadata {
           author {
             name
-            summary
           }
         }
       }
@@ -28,31 +31,61 @@ const Bio = () => {
   const { author } = data.site.siteMetadata
 
   return (
-    <Flex
+    <Box
       sx={{
         variant: 'box.card.primary',
-        maxWidth: ['auto', null, 'mediumLarge'],
-        flexDirection: 'column',
+        ...containerStyles,
       }}
     >
-      <h5 sx={{ textAlign: 'center', color: 'primary' }}>{author.name}</h5>
-      <GatsbyImage
-        image={image}
-        alt={author.name}
-        style={{
-          width: theme.space[10],
-          borderRadius: '50%',
-          alignSelf: 'center',
-          outlineWidth: '1px',
-          outlineStyle: 'solid',
-          outlineColor: `${theme.colors.darken}`,
+      <Flex
+        sx={{
+          gap: [3, null, 4],
+          flexDirection: ['column', null, 'row'],
         }}
-      />
-      <p sx={{ mt: 3, mb: 4 }}>
-        Written by <strong>{author.name}</strong> {author.summary}
-      </p>
-      <SocialLinks sx={{ justifyContent: ['center', null, null] }} />
-    </Flex>
+      >
+        <Flex
+          sx={{
+            justifyContent: ['center', 'flex-start'],
+            alignItems: ['center', null],
+            flexDirection: ['column'],
+          }}
+        >
+          <GatsbyImage
+            image={image}
+            alt={author.name}
+            style={{
+              maxWidth: 260,
+              maxHeight: 260,
+              height: '100%',
+              outlineWidth: '1px',
+              outlineStyle: 'solid',
+              outlineColor: `${theme.colors.darken}`,
+              borderRadius: '3px',
+            }}
+          />
+          <SocialLinks sx={{ justifyContent: 'center', mt: 5 }} />
+        </Flex>
+        <Box sx={{ flex: '1 1 50%' }}>
+          <p>
+            Hi, I'm Anthony! I'm a web developer based in Boulder, Colorado. I
+            love collaborative environments, novel problems, and learning about
+            new technologies. While I have worked as a full-stack developer, I
+            am really fascinated by UI and UX. Pretty, accessible, performant,
+            and elegant user interfaces make me swoon.
+          </p>
+          <p>
+            I am primarily a JavaScript developer, and while I gravitate towards
+            front-end development, I can create (and resolve!) bugs across the
+            stack.
+          </p>
+          <p>
+            Outside of coding, my interests include rock climbing, skiing,
+            cycling, cooking, music, video games, watches, my cat Bean, and the
+            Oxford comma.
+          </p>
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 
