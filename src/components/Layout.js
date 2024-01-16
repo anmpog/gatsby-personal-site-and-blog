@@ -30,13 +30,13 @@ const Layout = ({ children }) => {
       </header>
       <main
         as='main'
+        className='content-wrapper'
         sx={{
           gridColumn: [
             'span 12',
             '2 / span 10',
             '2 / span 10',
             '2 / span 10',
-            // '2 / span 10',
             '4 / span 6',
           ],
           px: [2, 0],
