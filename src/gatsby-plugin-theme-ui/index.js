@@ -17,7 +17,7 @@ const theme = {
     darkCard: '#424349',
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body: 'Open Sans, sans-serif',
     heading: 'Merriweather, serif',
     monospace: 'Menlo, monospace',
   },
@@ -38,7 +38,7 @@ const theme = {
   },
   lineHeights: {
     heading: 1.2,
-    body: 1.5,
+    body: 1.4,
   },
   // text: {
   //   heading: {

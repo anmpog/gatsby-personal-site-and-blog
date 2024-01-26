@@ -69,13 +69,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Merriweather\:400,700,900`],
-        display: `swap`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`${__dirname}/src/components/Layout`),
