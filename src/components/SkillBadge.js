@@ -3,7 +3,7 @@ import { jsx, Badge } from 'theme-ui'
 
 const SkillBadge = ({ children, props }) => {
   return (
-    <Badge variant='primary' {...props}>
+    <Badge as='li' variant='primary' {...props}>
       {children}
     </Badge>
   )
