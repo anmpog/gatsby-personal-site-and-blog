@@ -11,11 +11,13 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/calistoga": "^5.0.22",
     "@fontsource/merriweather": "^5.0.8",
     "@fontsource/open-sans": "^5.0.22",
     "@mdx-js/mdx": "v1",
     "@mdx-js/react": "v1",
     "@theme-ui/color": "^0.14.5",
+    "axios": "^1.7.7",
     "devicon": "^2.15.1",
     "gatsby": "^4.16.0",
     "gatsby-plugin-emotion": "^7.4.0",
@@ -23,7 +25,7 @@
     "gatsby-plugin-layout": "^4.13.0",
     "gatsby-plugin-manifest": "^2.4.14",
     "gatsby-plugin-mdx": "^3.16.0",
-    "gatsby-plugin-preload-fonts": "^3.4.0",
+    "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-sharp": "^4.16.1",
     "gatsby-plugin-theme-ui": "^0.14.5",
@@ -66,7 +68,6 @@
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "preload-fonts": "gatsby-preload-fonts",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
