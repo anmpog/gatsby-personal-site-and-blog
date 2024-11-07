@@ -1,46 +1,22 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import {
-  MongoIcon,
-  HTMLIcon,
-  JavaScriptIcon,
-  NodeJSIcon,
-  ReactIcon,
-  CSSIcon,
-  GatsbyIcon,
-  FirefoxIcon,
   GithubIcon,
   GitlabIcon,
-  VSCodeIcon,
   LinkedInIcon,
-} from '../../assets/dev-icons'
+  EyeIcon,
+} from '../../assets/icons'
 
-const Icon = ({ icon, color, ...props }) => {
+const Icon = ({ icon, ...props }) => {
   switch (icon) {
-    case 'mongo':
-      return <MongoIcon color={color} {...props} />
-    case 'html':
-      return <HTMLIcon color={color} {...props} />
-    case 'javascript':
-      return <JavaScriptIcon color={color} {...props} />
-    case 'node':
-      return <NodeJSIcon color={color} {...props} />
-    case 'react':
-      return <ReactIcon color={color} {...props} />
-    case 'css':
-      return <CSSIcon color={color} {...props} />
-    case 'gatsby':
-      return <GatsbyIcon color={color} {...props} />
-    case 'firefox':
-      return <FirefoxIcon color={color} {...props} />
+    case 'eye':
+      return <EyeIcon {...props} />
     case 'github':
-      return <GithubIcon color={color} {...props} />
+      return <GithubIcon {...props} />
     case 'gitlab':
-      return <GitlabIcon color={color} {...props} />
-    case 'vscode':
-      return <VSCodeIcon color={color} {...props} />
+      return <GitlabIcon {...props} />
     case 'linkedin':
-      return <LinkedInIcon color={color} {...props} />
+      return <LinkedInIcon {...props} />
     default:
       return null
   }
