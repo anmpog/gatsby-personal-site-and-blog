@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
 import { jsx, Flex } from 'theme-ui'
-import MobileNav from './Nav/MobileNav'
 import InternalLink from './shared/InternalLink'
 
 const MainNav = () => {
   const navLinkData = useStaticQuery(graphql`
-    query navLinksQuery {
+    query navElementsQuery {
       site {
         siteMetadata {
+          title
           menuLinks {
             name
             link
@@ -18,9 +18,9 @@ const MainNav = () => {
     }
   `)
 
-  let {
+  const {
     site: {
-      siteMetadata: { menuLinks },
+      siteMetadata: { menuLinks, title },
     },
   } = navLinkData
 
@@ -29,21 +29,33 @@ const MainNav = () => {
       as='nav'
       sx={{
         width: '100%',
-        justifyContent: 'flex-end',
-        position: 'relative',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        color: 'secondary',
       }}
     >
+      <h3
+        sx={{
+          margin: 0,
+          fontSize: 3,
+          fontFamily: 'logo',
+          fontWeight: 300,
+          pr: 1,
+          color: 'transparent',
+          backgroundColor: '#ed461d',
+          backgroundImage: 'linear-gradient(315deg, #ed461d 40%, #f2af29 100%)',
+          backgroundClip: 'text',
+        }}
+      >
+        {title}
+      </h3>
       <ul
         sx={{
-          display: ['none', 'grid'],
-          gridAutoFlow: 'row',
-          gridTemplateColumns: `repeat(${menuLinks.length}, 1fr)`,
-          gap: 3,
+          display: 'flex',
+          gap: [2, 3],
           margin: 0,
-          px: 0,
+          p: 0,
           listStyle: 'none',
-          alignItems: 'center',
-          mt: `-${3}`,
         }}
       >
         {menuLinks.map(link => {
@@ -60,7 +72,6 @@ const MainNav = () => {
           )
         })}
       </ul>
-      <MobileNav links={menuLinks} />
     </Flex>
   )
 }

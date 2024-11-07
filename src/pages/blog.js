@@ -1,5 +1,4 @@
 import { Fragment } from 'react'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import usePosts from '../hooks/usePosts'
 import PostPreview from '../components/PostPreview'
@@ -11,7 +10,7 @@ const Blog = ({ location }) => {
   return (
     <Fragment>
       <SEO title='Blog Posts' location={location} />
-      <ContentSection>
+      <ContentSection sectionTitle={'Blog'}>
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />
         ))}

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { jsx, Flex, Box } from 'theme-ui'
 import theme from '../gatsby-plugin-theme-ui'
 import SocialLinks from './SocialLinks'

@@ -2,11 +2,11 @@ import { Fragment } from 'react'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO'
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage = ({ location }) => {
   return (
     <Fragment>
       <SEO title='404: Not Found' location={location} />
-      <h2>The page you were looking for does not exist... yet.</h2>
+      <h5>The page you were looking for does not exist... yet.</h5>
     </Fragment>
   )
 }
