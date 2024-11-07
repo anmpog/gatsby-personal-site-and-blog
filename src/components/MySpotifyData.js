@@ -17,7 +17,7 @@ export default function MySpotifyData() {
 
   useEffect(() => {
     setSpotifyDataLoading(true)
-    fetch(`${process.env.GATSBY_API_URL}/api/getSpotifyData`, {
+    fetch(`api/getSpotifyData`, {
       headers: myHeaders,
     })
       .then(res => res.json())
