@@ -11,6 +11,7 @@ import InternalLink from '../shared/InternalLink'
 export const pinBody = css`
   body {
     overflow-y: hidden;
+    position: fixed;
   }
 
   .content-wrapper {

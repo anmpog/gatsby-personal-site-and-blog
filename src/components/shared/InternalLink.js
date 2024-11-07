@@ -12,7 +12,10 @@ const InternalLink = ({
 }) => {
   return (
     <Link
-      sx={{ variant: isNavigation ? 'links.navLink' : 'links.internalLink' }}
+      sx={{
+        variant: isNavigation ? 'links.navLink' : 'links.internalLink',
+        ...styles,
+      }}
       activeClassName='active'
       partiallyActive={to === '/blog' ? true : false}
       to={to}

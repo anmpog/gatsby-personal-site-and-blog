@@ -17,19 +17,20 @@ const theme = {
     darkCard: '#424349',
   },
   fonts: {
-    body: 'system-ui, sans-serif',
+    body: 'Open Sans, sans-serif',
     heading: 'Merriweather, serif',
     monospace: 'Menlo, monospace',
+    logo: 'Calistoga, serif'
   },
   fontSizes: [
-    '0.75rem',
-    '1rem',
-    '1.125rem',
-    '1.5rem',
-    '2.125rem',
-    '3rem',
-    '3.5rem',
-    '4rem',
+    '0.75em',
+    '1em',
+    '1.125em',
+    '1.5em',
+    '2.125em',
+    '3em',
+    '3.5em',
+    '4em',
   ],
   fontWeights: {
     body: 400,
@@ -38,15 +39,8 @@ const theme = {
   },
   lineHeights: {
     heading: 1.2,
-    body: 1.5,
+    body: 1.4,
   },
-  // text: {
-  //   heading: {
-  //     fontFamily: 'heading',
-  //     fontSize: 2,
-  //     color: 'red',
-  //   },
-  // },
   radii: ['0.5rem'],
   shadows: [
     '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
@@ -87,8 +81,8 @@ const theme = {
         lineHeight: 'body',
         marginTop: 0,
         marginBottom: 0,
-        '&:not(:last-of-type)': {
-          marginBottom: [3, null, 4],
+        '& + p': {
+          marginTop: [3, null, 4],
         },
         code: {
           backgroundColor: 'rgb(1, 22, 39)',
@@ -110,7 +104,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 5,
         a: {
           color: 'inherit',
@@ -122,7 +115,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 4,
         a: {
           color: 'inherit',
@@ -134,7 +126,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 3,
         a: {
           color: 'inherit',
@@ -146,7 +137,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 3,
         a: {
           color: 'inherit',
@@ -158,7 +148,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 3,
         a: {
           color: 'inherit',
@@ -170,7 +159,6 @@ const theme = {
         fontWeight: 'heading',
         lineHeight: 'heading',
         fontFamily: 'heading',
-        marginTop: 0,
         marginBottom: 2,
       },
       ul: {
@@ -187,6 +175,18 @@ const theme = {
       time: {
         variant: 'styles.root.p',
         fontStyle: 'italic',
+      },
+      blockquote: {
+        borderLeftColor: 'primary',
+        borderLeftStyle: 0,
+        borderLeftWidth: 1,
+        padding: 2,
+        backgroundColor: 'darken',
+        mx: 0,
+        p: {
+          margin: 0,
+          color: 'text',
+        },
       },
     },
   },
@@ -216,16 +216,6 @@ const theme = {
   },
   ol: {
     color: 'text',
-  },
-  blockquote: {
-    borderLeftColor: 'primary',
-    borderLeftStyle: 0,
-    borderLeftWidth: 1,
-    padding: 2,
-    backgroundColor: 'darken',
-    p: {
-      margin: 0,
-    },
   },
   box: {
     card: {
@@ -264,7 +254,7 @@ const theme = {
   },
   links: {
     internalLink: {
-      color: ['text', 'muted'],
+      color: 'muted',
     },
     navLink: {
       variant: 'links.internalLink',

@@ -16,7 +16,7 @@ const ResumeExperienceSection = ({
   return (
     <ExternalLink to={siteUrl}>
       <Card variant='box.card.primary' hoverEffect={true}>
-        <h5 sx={{ color: 'darken' }}>{company}</h5>
+        <h5 sx={{ color: 'darken', marginTop: 0 }}>{company}</h5>
         <Flex
           sx={{
             gap: [1, null, 3],
@@ -24,7 +24,9 @@ const ResumeExperienceSection = ({
             mb: 2,
           }}
         >
-          <h6 sx={{ color: 'darken', mb: 0 }}>{jobTitle}</h6>
+          <h6 sx={{ color: 'darken', marginTop: 0, marginBottom: 0 }}>
+            {jobTitle}
+          </h6>
           <time>
             {startDate} – {endDate}
           </time>

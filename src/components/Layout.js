@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container, Flex } from 'theme-ui'
-import MainNav from './MainNav'
 import theme from '../gatsby-plugin-theme-ui'
 import ExternalLink from './shared/ExternalLink'
+import MainNav from './MainNav'
 
 const Layout = ({ children }) => {
   return (
@@ -21,8 +21,15 @@ const Layout = ({ children }) => {
           display: 'flex',
           width: '100%',
           margin: '0 auto',
-          height: [theme.space[8], theme.space[9]],
-          gridColumnStart: 'span 12',
+          py: [3, null, 4],
+          gridColumn: [
+            'span 12',
+            '2 / span 10',
+            '2 / span 10',
+            '2 / span 10',
+            '4 / span 6',
+          ],
+          px: [2, 0],
           gridRowGap: 0,
         }}
       >
@@ -30,13 +37,13 @@ const Layout = ({ children }) => {
       </header>
       <main
         as='main'
+        className='content-wrapper'
         sx={{
           gridColumn: [
             'span 12',
             '2 / span 10',
             '2 / span 10',
             '2 / span 10',
-            // '2 / span 10',
             '4 / span 6',
           ],
           px: [2, 0],
@@ -47,7 +54,13 @@ const Layout = ({ children }) => {
       <Flex
         as='footer'
         sx={{
-          gridColumnStart: 'span 12',
+          gridColumn: [
+            'span 12',
+            '2 / span 10',
+            '2 / span 10',
+            '2 / span 10',
+            '4 / span 6',
+          ],
           borderTopWidth: '1px',
           borderTopStyle: 'solid',
           borderTopColor: 'gray',

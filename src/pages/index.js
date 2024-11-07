@@ -6,17 +6,16 @@ import Card from '../components/shared/Card'
 import ContentSection from '../components/ContentSection'
 import ResumeExperienceSection from '../components/ResumeExperienceSection'
 import Bio from '../components/Bio.js'
+import MySpotifyData from '../components/MySpotifyData.js'
 
 const Index = ({ location }) => {
   return (
     <Fragment>
       <SEO title='Home' location={location} />
-      <ContentSection>
-        <h5 sx={{ mb: 0 }}>Bio</h5>
+      <ContentSection sectionTitle='Bio'>
         <Bio />
       </ContentSection>
-      <ContentSection>
-        <h5 sx={{ mb: 0 }}>Experience</h5>
+      <ContentSection sectionTitle='Experience'>
         <ResumeExperienceSection
           company={'Watchtower Solutions'}
           siteUrl={'https://www.yourwatchtower.com/'}
@@ -62,12 +61,16 @@ const Index = ({ location }) => {
           ]}
         />
       </ContentSection>
-      <ContentSection>
-        <h5 sx={{ mb: 0 }}>Projects</h5>
+      <ContentSection sectionTitle='Projects'>
         <Card sx={{ variant: 'box.card.primary' }}>
           <p sx={{ textAlign: 'center' }}>
             This section is under construction. Check back again soon!
           </p>
+        </Card>
+      </ContentSection>
+      <ContentSection sectionTitle='Listening To'>
+        <Card sx={{ variant: 'box.card.primary' }}>
+          <MySpotifyData />
         </Card>
       </ContentSection>
     </Fragment>

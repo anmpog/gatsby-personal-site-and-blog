@@ -54,9 +54,8 @@ const Bio = ({ containerStyles }) => {
             image={image}
             alt={author.name}
             style={{
-              maxWidth: 260,
-              maxHeight: 260,
-              height: '100%',
+              maxWidth: 400,
+              maxHeight: 400,
               outlineWidth: '1px',
               outlineStyle: 'solid',
               outlineColor: `${theme.colors.darken}`,
@@ -65,7 +64,7 @@ const Bio = ({ containerStyles }) => {
           />
           <SocialLinks sx={{ justifyContent: 'center', mt: 5 }} />
         </Flex>
-        <Box sx={{ flex: '1 1 50%' }}>
+        <Box sx={{ flexBasis: '66.66%' }}>
           <p>
             Hi, I'm Anthony! I'm a web developer based in Boulder, Colorado. I
             love collaborative environments, novel problems, and learning about

@@ -10,7 +10,7 @@ const PostPreview = ({ post }) => {
       <Card hoverEffect={true}>
         <article key={slug}>
           <header sx={{ marginBottom: 2 }}>
-            <h5 sx={{ color: 'muted' }}>{title}</h5>
+            <h5 sx={{ color: 'muted', marginTop: 0 }}>{title}</h5>
             <time dateTime={date}>{date}</time>
           </header>
           <p
